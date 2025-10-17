@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customrecordtype scriptid="customrecord_iq_invoice_metrics">
+  <accesstype>NONENEEDED</accesstype>
+  <allowattachments>F</allowattachments>
+  <allowinlinedeleting>F</allowinlinedeleting>
+  <allowinlineediting>F</allowinlineediting>
+  <allowquickadd>F</allowquickadd>
+  <allowquicksearch>T</allowquicksearch>
+  <allowuiaccess>T</allowuiaccess>
+  <description>Daily processing metrics</description>
+  <enablekeywords>F</enablekeywords>
+  <enablenumbering>F</enablenumbering>
+  <isinactive>F</isinactive>
+  <isordered>F</isordered>
+  <recordname>IQ Invoice Metrics</recordname>
+  <showid>T</showid>
+  <customrecordcustomfields>
+    <customrecordcustomfield scriptid="custrecord_iq_metric_date">
+      <applyformatting>T</applyformatting>
+      <defaultchecked>F</defaultchecked>
+      <displaytype>NORMAL</displaytype>
+      <fieldtype>DATE</fieldtype>
+      <help>Metrics date</help>
+      <isformula>F</isformula>
+      <ismandatory>T</ismandatory>
+      <label>Date</label>
+      <searchlevel>2</searchlevel>
+      <storevalue>T</storevalue>
+    </customrecordcustomfield>
+    <customrecordcustomfield scriptid="custrecord_iq_metric_invoice_count">
+      <applyformatting>F</applyformatting>
+      <defaultchecked>F</defaultchecked>
+      <defaultvalue>0</defaultvalue>
+      <displaytype>NORMAL</displaytype>
+      <fieldtype>INTEGER</fieldtype>
+      <help>Total invoices processed</help>
+      <isformula>F</isformula>
+      <ismandatory>F</ismandatory>
+      <label>Total Invoices</label>
+      <searchlevel>2</searchlevel>
+      <storevalue>T</storevalue>
+    </customrecordcustomfield>
+    <customrecordcustomfield scriptid="custrecord_iq_metric_high_confidence">
+      <applyformatting>F</applyformatting>
+      <defaultchecked>F</defaultchecked>
+      <defaultvalue>0</defaultvalue>
+      <displaytype>NORMAL</displaytype>
+      <fieldtype>INTEGER</fieldtype>
+      <help>High confidence count</help>
+      <isformula>F</isformula>
+      <ismandatory>F</ismandatory>
+      <label>High Confidence</label>
+      <searchlevel>2</searchlevel>
+      <storevalue>T</storevalue>
+    </customrecordcustomfield>
+    <customrecordcustomfield scriptid="custrecord_iq_metric_api_calls">
+      <applyformatting>F</applyformatting>
+      <defaultchecked>F</defaultchecked>
+      <defaultvalue>0</defaultvalue>
+      <displaytype>NORMAL</displaytype>
+      <fieldtype>INTEGER</fieldtype>
+      <help>Total API calls</help>
+      <isformula>F</isformula>
+      <ismandatory>F</ismandatory>
+      <label>API Calls</label>
+      <searchlevel>2</searchlevel>
+      <storevalue>T</storevalue>
+    </customrecordcustomfield>
+  </customrecordcustomfields>
+</customrecordtype>

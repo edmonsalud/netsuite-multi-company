@@ -1,0 +1,14 @@
+Name,Email,Roles,Status,Risk Level,Notes,Recommendation
+Augusto Briceno,augusto@hbno.com,HBNO - Material Handler,Active,Low,Single role assignment - standard warehouse operator,None - appropriate access
+Cris Torres,cris@hbno.com,HBNO - Material Handler,Active,Low,Single role assignment - standard warehouse operator,None - appropriate access
+Gerardo Parra,gparra@hbno.com,"HBNO - Material Handler, HBNO - Material Handler WMS",Active,Low,Dual roles - redundant but harmless,Consider consolidating to single Material Handler WMS role
+Gerardo R Pina Barraza,gerardo@hbno.com,HBNO - Material Handler,Active,Low,Single role assignment - standard warehouse operator,None - appropriate access
+Gonzalo Vazquez,Gonzalo@hbno.com,"HBNO - Material Handler, HBNO - Material Handler WMS",Active,Low,Dual roles - redundant but harmless,Consider consolidating to single Material Handler WMS role
+Holsen B Astuvilca Palpas,Blas@hbno.com,"HBNO - Material Handler, WMS Mobile Operator",Active,Low,Standard warehouse roles - mobile device access for scanning,None - appropriate access for warehouse operations
+Javier Guerrero,javier@hbno.com,HBNO - Material Handler,Active,Low,Single role assignment - standard warehouse operator,None - appropriate access
+Jorge L Robles Parra,jorge@hbno.com,HBNO - Material Handler,Active,Low,Single role assignment - standard warehouse operator,None - appropriate access
+Jose J Felix,jose@hbno.com,HBNO - Material Handler,Active,Low,Single role assignment - standard warehouse operator,None - appropriate access
+Juan F Torres Mora,juan@hbno.com,HBNO - Material Handler,Active,Low,Single role assignment - standard warehouse operator,None - appropriate access
+Luis M Chavarin Ramos,Luismiguel@hbno.com,"HBNO - Material Handler, HBNO - Material Handler WMS",Active,Low,Dual roles - redundant but harmless,Consider consolidating to single Material Handler WMS role
+Mario Flores,materialhandling1@hbno.com,"HBNO - Material Handler, HBNO - Material Handler WMS",Active,Low,Dual roles - redundant but harmless,Consider consolidating to single Material Handler WMS role
+Oscar Ivan Gonzalez Garcia,oscar@hbno.com,HBNO - Material Handler,Active,Low,Single role assignment - standard warehouse operator,None - appropriate access

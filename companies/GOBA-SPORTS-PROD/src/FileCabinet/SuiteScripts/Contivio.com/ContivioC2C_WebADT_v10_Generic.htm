@@ -1,0 +1,210 @@
+<!-- 
+// Contivio.com Copyright © 2020
+// All rights reserved. No part of this code may be
+// reproduced, distributed, transmitted or used in any form
+// or by any means, without the prior written permission from Contivio.com
+// -----------------------------------------------------------------------
+-->
+<html>
+<head>
+    <title>Contivio.com Click To Call</title>
+    <style>
+        .Dial {
+            font-family: ProximaRegular,Helvetica,Arial;
+            font-size: 16px;
+            line-height: 25px;
+            color: #536370;
+        }
+
+        .Error {
+            font-family: ProximaRegular,Helvetica,Arial;
+            font-size: 18px;
+            line-height: 25px;
+            color: red;
+            fontWeight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div align="center" style="padding-top: 15px">
+        <span id="spnDialing" class="Dial">Dialing: </span>
+        <br /><br />
+        <img src="https://usweb4.contivio.com/Contivio.ADT.Web.Site/10.0.5/CRMNotifyContivio.gif" width="200px" />
+    </div>
+    <script>
+
+// variables
+var sendUpadteArgs = false;
+var commonRecordType = false;
+var page_name, page_type, record_id_name, record_id_value, phone_number, windowCloseTimer, region;
+var cti_qry_str, parent_window_url, last_fs_index, last_qm_index, clicked_elm, elm_parent, tbl_list, tr_header, column_name;
+
+// CTI Window
+var arr_cti_params, cti_param;
+cti_qry_str = window.location.search.substring(1);
+arr_cti_params = cti_qry_str.split('&');
+for (var i = 0; i < arr_cti_params.length; i++) {
+	cti_param = arr_cti_params[i].split('=');
+	if (cti_param[0] == 'phone') {
+		phone_number = cti_param[1];
+	} else
+		if (cti_param[0] == 'region') {
+			region = cti_param[1];
+		}
+}
+
+var spnDialing = document.getElementById('spnDialing');
+if (!region) {
+		spnDialing.className = "Error";
+		spnDialing.innerHTML = "Your click to dial feature is not setup correctly (Contivio region is missing). <br/>Please contact <a href='mailto:support@contivio.com'>Contivio.com Support</a> for assistance.";
+		throw new Error("Incorrect region. Please contact Contivio Support.");
+} else {
+	if (region.toUpperCase() == "US")
+		region = 'usweb1.contivio.com';
+	else if (region.toUpperCase() == "US2")
+		region = 'usweb2.contivio.com';
+	else if (region.toUpperCase() == "US3")
+		region = 'usweb3.contivio.com';
+	else if (region.toUpperCase() == "US4")
+		region = 'usweb4.contivio.com';
+	else if (region.toUpperCase() == "US5")
+		region = 'usweb4.contivio.com';
+	else if (region.toUpperCase() == "AUS")
+		region = 'auweb1.contivio.com';
+	else if (region.toUpperCase() == "ASIA")
+		region = 'asweb1.contivio.com';
+	else {
+		spnDialing.className = "Error";
+		spnDialing.innerHTML = "Your click to dial feature is not setup correctly (Contivio region is missing). <br/>Please contact <a href='mailto:support@contivio.com'>Contivio.com Support</a> for assistance.";
+		throw new Error("Incorrect region. Please contact Contivio Support.");
+	}
+}
+
+// Parent Window
+parent_window_url = window.opener.location.href;
+clicked_elm = window.opener.document.activeElement;
+// Check Page Type
+last_fs_index = parent_window_url.lastIndexOf("/") + 1;
+last_qm_index = parent_window_url.lastIndexOf("?");
+if (last_qm_index > last_fs_index)
+	page_name = parent_window_url.substring(last_fs_index, last_qm_index);
+else
+	page_name = parent_window_url.substring(last_fs_index);
+
+if (page_name.indexOf("list") > 0)
+	page_type = "LIST";
+else
+	page_type = "VIEW";
+
+// VIEW Case
+if (page_type == "VIEW") {
+	if (page_name == "custjob.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMAccountID";
+	} else if (page_name == "contact.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMContactID";
+	} else if (page_name == "opprtnty.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMOpportunityID";
+	} else if (page_name == "supportcase.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMCaseID";
+	} else if (page_name == "call.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMActivityID";
+	} else if (page_name == "custinvc.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMInvoiceID";
+	} else if (page_name == "salesord.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMSalesOrderID";
+	} else if (page_name == "rtnauth.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMReturnAuthorisationID";
+	} else if (page_name == "custcred.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMCreditMemoID";
+	} else if (page_name == "partner.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMPartnerID";
+	}
+
+	var arrQryStrings,
+	param;
+	arrQryStrings = window.opener.location.search.substring(1).split('&');
+	if (commonRecordType) {
+		for (var i = 0; i < arrQryStrings.length; i++) {
+			param = arrQryStrings[i].split('=');
+			if (param[0] == 'id') {
+				sendUpadteArgs = true;
+				record_id_value = param[1];
+				break;
+			}
+		}
+	}
+
+	Dial(sendUpadteArgs);
+
+}
+// LIST Case
+else {
+	if (page_name == "custjoblist.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMAccountID";
+	} else if (page_name == "contactlist.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMContactID";
+	} else if (page_name == "opprtntylist.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMOpportunityID";
+	} else if (page_name == "caselist.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMCaseID";
+	} else if (page_name == "calllist.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMActivityID";
+	} else if (page_name == "partnerlist.nl") {
+		commonRecordType = true;
+		record_id_name = "CRMPartnerID";
+	}
+	
+	
+
+	if (commonRecordType) {
+		// Listing Tabel = elm -> td -> tr -> table -> tr (header row)
+		tr_header = clicked_elm.parentElement.parentElement.parentElement.childNodes[0]; //.childNodes[1].innerText
+		for (var x = 0; x < tr_header.childNodes.length; x++) {
+			// innerText for Chrome and IE, textContent for Safari and Firefox
+			column_name = tr_header.childNodes[x].innerText || tr_header.childNodes[x].textContent;
+			if (column_name != null && (column_name.toLowerCase().trim() == "id" || column_name.toLowerCase().trim() == "internal id")) {
+				sendUpadteArgs = true;
+				record_id_value = clicked_elm.parentElement.parentElement.cells[x].innerText || clicked_elm.parentElement.parentElement.cells[x].textContent;
+				break;
+			}
+		}
+	}
+
+	Dial(sendUpadteArgs);
+}
+
+function Dial(sendUpadteArgs) {
+	var span = document.getElementById('spnDialing');
+	span.innerText += " " + decodeURIComponent(phone_number);
+	var args = "action=dial&phone=" + phone_number + "&callParamID=" + record_id_name + "&callParamValue=" + encodeURIComponent(record_id_value);
+	SendCommand(args);
+	//setTimeout(function () {window.close();}, 2000);
+}
+
+function SendCommand(args) {
+	try {
+		window.open("https://" + region + "/Contivio.ADT.Web.Site/10.0.6/cmd.htm?" + args, "ContivioClickToCall", "width=200,height=100,location=no,menubar=no,resizable=no,scrollbars=no,status=no,titlebar=no");
+
+	} catch (e) { ;
+	}
+}
+
+    </script>
+
+</body>
+</html>

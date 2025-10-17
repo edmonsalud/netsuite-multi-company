@@ -1,0 +1,44 @@
+{
+  "model": "claude-sonnet-4-5-20250929",
+  "env": {
+    "MAX_THINKING_TOKENS": "10000",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-5-20250929"
+  },
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Edit",
+      "Write",
+      "Read",
+      "Glob",
+      "Grep",
+      "Task",
+      "NotebookEdit",
+      "SlashCommand",
+      "TodoWrite",
+      "WebFetch",
+      "WebSearch",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(find:*)",
+      "Bash(cat:*)",
+      "SlashCommand(/documenter Create comprehensive NetSuite user access documentation for HBNO account based on the user-role analysis we completed. \n\nCONTEXT:\n- We analyzed 92 users with 215 role assignments across 51 distinct roles\n- Source file: companies/HBNO/HBNO Users and Roles.csv\n- We identified critical security issues including 18 users with Administrator access, 30 SOD violations, 15 shared accounts, and 11 external users\n\nTASK:\nCreate a detailed CSV-compatible documentation for the top 20 CRITICAL users that need immediate attention. For EACH user provide:\n\n1. User Name (full name from analysis)\n2. Email Address (exact email from our data)\n3. NetSuite Role(s) (list all assigned roles, comma-separated)\n4. Department (infer from roles: Finance, Warehouse, QC, Manufacturing, IT/Admin, Customer Service, Purchasing, External Consultant)\n5. Status (Active/Needs Review/Security Risk/External)\n6. General Access Permissions (summarize: Financial, Operational, Administrative, Quality, Warehouse, etc.)\n7. Global Permissions Specific (list critical permissions: Administrator, Script Deployment, Web Services, OAuth, Banking Integration, etc.)\n8. Login Access (Should be TRUE for active users, FALSE for accounts to disable)\n9. Recommendations (specific actions needed: \"Remove Admin role\", \"Reduce from 18 to 5 roles\", \"Enable 2FA\", \"Disable account - test user\", etc.)\n\nPRIORITY USERS TO DOCUMENT (in order):\n1. Jhon Smith (testhbno@gmail.com) - TEST ACCOUNT\n2. David Bertini (18 roles)\n3. Jose G De Los Santos-Chavez (14 roles)\n4. Mubashir M Amin (external consultant, 8 roles)\n5. Gijo Varghese (Gmail developer account)\n6. Rajeswaran Ayyadurai (fraud triangle)\n7. Avery Anderson (9 roles)\n8. Diego Gasaniga (netsuite2@hbno.com)\n9. Chimee Eze (external consultant)\n10. Rian (Netstock external)\n11. Eduardo NS (netsuite1@hbno.com)\n12. AP Accounts Payable (ap@hbno.com) - SHARED\n13. AR Accounts Receivable (ar@hbno.com) - SHARED\n14. AP Accountant (accountant@hbno.com) - SHARED\n15. Luis A Robles Valencia (6 roles)\n16. Santhosh K Bejjenki (6 roles)\n17. Kassandra E Greule (5 roles)\n18. Priya AP (4 roles)\n19. Josef Demangeat (Administrator)\n20. Kirupa Krishna Kumar (Administrator)\n\nOUTPUT FORMAT:\nProvide the data in CSV-ready format that I can directly paste into the template. Each user should be one row with all fields filled out comprehensively.)",
+      "SlashCommand(/documenter:*)",
+      "Read(//c/Users/Ed/.suitecloud-sdk/**)",
+      "Bash(ls:*)",
+      "Bash(echo $APPDATA)",
+      "Read(//c/Users/Ed/AppData/Local/**)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git mv:*)"
+    ],
+    "deny": [],
+    "ask": [
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(rm -rf /:*)",
+      "Bash(suitecloud project:deploy:*)"
+    ],
+    "defaultMode": "acceptEdits"
+  }
+}

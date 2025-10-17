@@ -1,0 +1,22 @@
+<role scriptid="customrole1800">
+  <centertype>SYSADMINCENTER</centertype>
+  <coreadminpermission>F</coreadminpermission>
+  <custrecord_scm_enable_cpn_on_role>F</custrecord_scm_enable_cpn_on_role>
+  <custrecord_scm_enable_elc_on_role>F</custrecord_scm_enable_elc_on_role>
+  <custrecord_scm_enable_itemsub_on_role>F</custrecord_scm_enable_itemsub_on_role>
+  <employeerestriction>NONE</employeerestriction>
+  <employeeselectionunrestricted>F</employeeselectionunrestricted>
+  <isinactive>T</isinactive>
+  <issalesrole>F</issalesrole>
+  <issinglesignononly>F</issinglesignononly>
+  <issupportrole>F</issupportrole>
+  <iswebserviceonlyrole>F</iswebserviceonlyrole>
+  <name>HR 2</name>
+  <parentrolescriptid></parentrolescriptid>
+  <restrictbydevice>F</restrictbydevice>
+  <restricttimeandexpenses>F</restricttimeandexpenses>
+  <subsidiaryoption>OWN</subsidiaryoption>
+  <subsidiaryviewingallowed>F</subsidiaryviewingallowed>
+  <tfaduration>0</tfaduration>
+  <tfarequired>OFF</tfarequired>
+</role>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customrecordtype scriptid="customrecord_iq_invoice_review">
+  <accesstype>NONENEEDED</accesstype>
+  <allowattachments>T</allowattachments>
+  <allowinlinedeleting>F</allowinlinedeleting>
+  <allowinlineediting>T</allowinlineediting>
+  <allowquickadd>F</allowquickadd>
+  <allowquicksearch>T</allowquicksearch>
+  <allowuiaccess>T</allowuiaccess>
+  <description>Manual review queue for low-confidence invoices</description>
+  <enablekeywords>F</enablekeywords>
+  <enablenumbering>T</enablenumbering>
+  <isinactive>F</isinactive>
+  <isordered>F</isordered>
+  <recordname>IQ Invoice Review</recordname>
+  <showid>T</showid>
+  <customrecordcustomfields>
+    <customrecordcustomfield scriptid="custrecord_iq_review_email_id">
+      <applyformatting>F</applyformatting>
+      <checkspelling>F</checkspelling>
+      <defaultchecked>F</defaultchecked>
+      <displaytype>NORMAL</displaytype>
+      <fieldtype>TEXT</fieldtype>
+      <help>Email message internal ID</help>
+      <isformula>F</isformula>
+      <ismandatory>F</ismandatory>
+      <label>Email Message ID</label>
+      <searchlevel>2</searchlevel>
+      <storevalue>T</storevalue>
+    </customrecordcustomfield>
+    <customrecordcustomfield scriptid="custrecord_iq_review_extracted_data">
+      <applyformatting>F</applyformatting>
+      <checkspelling>F</checkspelling>
+      <defaultchecked>F</defaultchecked>
+      <displaytype>NORMAL</displaytype>
+      <fieldtype>TEXTAREA</fieldtype>
+      <help>JSON of extracted invoice data</help>
+      <isformula>F</isformula>
+      <ismandatory>F</ismandatory>
+      <label>Extracted Data</label>
+      <searchlevel>2</searchlevel>
+      <storevalue>T</storevalue>
+    </customrecordcustomfield>
+    <customrecordcustomfield scriptid="custrecord_iq_review_vendor_raw">
+      <applyformatting>F</applyformatting>
+      <checkspelling>F</checkspelling>
+      <defaultchecked>F</defaultchecked>
+      <displaytype>NORMAL</displaytype>
+      <fieldtype>TEXT</fieldtype>
+      <help>Vendor name from invoice</help>
+      <isformula>F</isformula>
+      <ismandatory>F</ismandatory>
+      <label>Vendor Name Raw</label>
+      <searchlevel>2</searchlevel>
+      <storevalue>T</storevalue>
+    </customrecordcustomfield>
+    <customrecordcustomfield scriptid="custrecord_iq_review_confidence">
+      <applyformatting>F</applyformatting>
+      <defaultchecked>F</defaultchecked>
+      <displaytype>NORMAL</displaytype>
+      <fieldtype>FLOAT</fieldtype>
+      <help>Overall confidence score</help>
+      <isformula>F</isformula>
+      <ismandatory>F</ismandatory>
+      <label>Confidence Score</label>
+      <searchlevel>2</searchlevel>
+      <storevalue>T</storevalue>
+    </customrecordcustomfield>
+  </customrecordcustomfields>
+</customrecordtype>

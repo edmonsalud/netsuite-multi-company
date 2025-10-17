@@ -1,0 +1,144 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<!-- Simplified Template - Only Primary Information and Email | Phone | Address sections -->
+<pdf>
+<head>
+    <style type="text/css">
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9pt;
+        }
+
+        body {
+            padding: 10px;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 10pt;
+            font-weight: bold;
+            margin: 10px 0 5px 0;
+            padding: 0;
+            border-bottom: 1px solid #000000;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        .info-table {
+            border: 0;
+        }
+
+        .info-table td {
+            padding: 2px 5px;
+            vertical-align: top;
+            border: 0;
+            font-size: 9pt;
+        }
+
+        .info-table .label {
+            font-weight: normal;
+            color: #000000;
+            width: 140px;
+            text-align: left;
+        }
+
+        .info-table .value {
+            font-weight: normal;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- Primary Information Section -->
+    <h2>Primary Information</h2>
+    <table class="info-table">
+        <tr>
+            <td class="label">Company</td>
+            <td class="value"><#if record.company??>${record.company}</#if></td>
+            <td class="label">Subsidiary</td>
+            <td class="value"><#if record.subsidiary??>${record.subsidiary}</#if></td>
+        </tr>
+        <tr>
+            <td class="label">Mr./Ms...</td>
+            <td class="value"><#if record.salutation??>${record.salutation}</#if></td>
+            <td class="label">Contact</td>
+            <td class="value"><#if record.entityid??>${record.entityid}</#if></td>
+        </tr>
+        <tr>
+            <td class="label">Name</td>
+            <td class="value"><#if record.firstname??>${record.firstname}</#if></td>
+            <td class="label">Category</td>
+            <td class="value"><#if record.category??>${record.category}</#if></td>
+        </tr>
+        <tr>
+            <td class="label"></td>
+            <td class="value"><#if record.lastname??>${record.lastname}</#if></td>
+            <td class="label">Comments</td>
+            <td class="value"><#if record.comments??>${record.comments}</#if></td>
+        </tr>
+        <tr>
+            <td class="label">Job Title</td>
+            <td class="value"><#if record.title??>${record.title}</#if></td>
+            <td class="label"></td>
+            <td class="value"></td>
+        </tr>
+    </table>
+
+    <!-- Email | Phone | Address Section -->
+    <h2>Email | Phone | Address</h2>
+    <table class="info-table">
+        <tr>
+            <td class="label">Email</td>
+            <td class="value"><#if record.email??>${record.email}</#if></td>
+            <td class="label">Address</td>
+            <td class="value"><#if record.defaultaddress??>${record.defaultaddress}</#if></td>
+        </tr>
+        <tr>
+            <td class="label">Alt. Email</td>
+            <td class="value"><#if record.altemail??>${record.altemail}</#if></td>
+            <td class="label"></td>
+            <td class="value"></td>
+        </tr>
+        <tr>
+            <td class="label">Home Phone</td>
+            <td class="value"><#if record.homephone??>${record.homephone}</#if></td>
+            <td class="label"></td>
+            <td class="value"></td>
+        </tr>
+        <tr>
+            <td class="label">Phone</td>
+            <td class="value"><#if record.phone??>${record.phone}</#if></td>
+            <td class="label">Image</td>
+            <td class="value"></td>
+        </tr>
+        <tr>
+            <td class="label">Office Phone</td>
+            <td class="value"><#if record.officephone??>${record.officephone}</#if></td>
+            <td class="label"></td>
+            <td class="value"></td>
+        </tr>
+        <tr>
+            <td class="label">Mobile Phone</td>
+            <td class="value"><#if record.mobilephone??>${record.mobilephone}</#if></td>
+            <td class="label">Last Modified Date</td>
+            <td class="value"><#if record.lastmodifieddate??>${record.lastmodifieddate}</#if></td>
+        </tr>
+        <tr>
+            <td class="label"></td>
+            <td class="value"></td>
+            <td class="label">Yes CMMS Case Notification Recipient</td>
+            <td class="value"><#if record.custentity_cmms_notification??><#if record.custentity_cmms_notification>Yes<#else>No</#if></#if></td>
+        </tr>
+        <tr>
+            <td class="label"></td>
+            <td class="value"></td>
+            <td class="label">Last Sales Activity</td>
+            <td class="value"><#if record.lastsalesactivity??>${record.lastsalesactivity}</#if></td>
+        </tr>
+    </table>
+
+</body>
+</pdf>

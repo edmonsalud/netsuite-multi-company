@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest projecttype="ACCOUNTCUSTOMIZATION">
+  <projectname>IQ-Powertools</projectname>
+  <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="true">
+        <id>CUSTOMRECORDS</id>
+      </feature>
+      <feature required="true">
+        <id>SUPPORT</id>
+      </feature>
+    </features>
+  </dependencies>
+</manifest>

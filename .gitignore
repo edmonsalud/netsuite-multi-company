@@ -1,0 +1,109 @@
+# IDEs and editors
+.idea
+*.iml
+*.iws
+.project
+.classpath
+*.launch
+.settings
+*.sublime-workspace
+.vscode
+
+# Dependency directories
+node_modules
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Packaged SuiteCloud projects
+build
+
+# misc
+.sass-cache
+
+# Optional npm cache directory
+.npm
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Output of 'npm pack'
+*.tgz
+
+# Project config
+project.json
+.env
+.sdfcli.json
+companies/*/.env
+companies/*/.sdfcli.json
+
+# NetSuite SDF Authentication files
+**/.sdfcli.json
+**/suitecloud.config.js.bak
+**/deploy_log.txt
+**/test_deploy.txt
+
+# Sensitive credentials
+**/token.json
+**/credentials.json
+**/*_credentials.js
+**/*_auth.js
+
+# MCP Server credentials (CRITICAL - Never commit!)
+**/.credentials/
+**/.credentials/**
+**/mcp-env.json
+**/*-mcp-key.pem
+**/*.pem
+**/*.key
+.mcp.json
+
+# NetSuite REST API Test Scripts with Credentials (CRITICAL - Never commit!)
+# These files contain hardcoded OAuth tokens and secrets
+**/test-netsuite-api.js
+**/test-netsuite-records.js
+**/test-netsuite-suiteql*.js
+**/test-*.js
+companies/**/get-*.js
+companies/**/query-*.js
+companies/**/agent*.js
+companies/**/find-*.js
+companies/**/update-*.js
+companies/**/bulk-*.js
+companies/**/search-*.js
+companies/**/verify-*.js
+companies/**/explore-*.js
+companies/**/fix-*.js
+
+# Company-specific MCP servers
+companies/**/mcp-server/
+
+# Exported data files (may contain sensitive customer/business data)
+**/*.csv
+**/*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!manifest.json
+companies/**/*.csv
+companies/**/*.json
+companies/**/*.html
+
+# Import/Export scripts
+companies/**/import-*.js
+companies/**/export-*.js
+companies/**/import-*.bat
+companies/**/import-*.ps1
+companies/**/import-*.txt
+
+# Temporary and backup files
+*.bak
+*.backup
+*~
+*.tmp

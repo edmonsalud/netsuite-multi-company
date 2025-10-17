@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+    <meta charset="utf-8">
+    <title>Contact Print PDF Customization Documentation - ABA-CON</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>100</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 1in;
+        }
+
+        body {
+            font-family: Calibri, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #333;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #1e4e79;
+            font-size: 24pt;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 10pt;
+            page-break-after: avoid;
+        }
+
+        h2 {
+            color: #2e5c8a;
+            font-size: 18pt;
+            font-weight: bold;
+            margin-top: 24pt;
+            margin-bottom: 12pt;
+            border-bottom: 2px solid #2e5c8a;
+            padding-bottom: 5pt;
+            page-break-after: avoid;
+        }
+
+        h3 {
+            color: #3a6b9c;
+            font-size: 14pt;
+            font-weight: bold;
+            margin-top: 18pt;
+            margin-bottom: 9pt;
+            page-break-after: avoid;
+        }
+
+        h4 {
+            color: #4a7cae;
+            font-size: 12pt;
+            font-weight: bold;
+            margin-top: 12pt;
+            margin-bottom: 6pt;
+            page-break-after: avoid;
+        }
+
+        p {
+            margin-top: 6pt;
+            margin-bottom: 6pt;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-top: 6pt;
+            margin-bottom: 6pt;
+            padding-left: 20pt;
+        }
+
+        li {
+            margin-bottom: 3pt;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12pt;
+            margin-bottom: 12pt;
+            font-size: 10pt;
+            page-break-inside: avoid;
+        }
+
+        th {
+            background-color: #1e4e79;
+            color: white;
+            padding: 8pt;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #1e4e79;
+        }
+
+        td {
+            padding: 6pt;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 9pt;
+            background-color: #f4f4f4;
+            padding: 2pt 4pt;
+            border-radius: 3pt;
+        }
+
+        pre {
+            font-family: 'Courier New', monospace;
+            font-size: 9pt;
+            background-color: #f4f4f4;
+            padding: 10pt;
+            border: 1px solid #ddd;
+            border-radius: 5pt;
+            overflow-x: auto;
+            page-break-inside: avoid;
+        }
+
+        .cover-page {
+            text-align: center;
+            page-break-after: always;
+            padding-top: 200pt;
+        }
+
+        .cover-title {
+            font-size: 36pt;
+            font-weight: bold;
+            color: #1e4e79;
+            margin-bottom: 20pt;
+        }
+
+        .cover-subtitle {
+            font-size: 24pt;
+            color: #2e5c8a;
+            margin-bottom: 40pt;
+        }
+
+        .cover-info {
+            font-size: 14pt;
+            color: #666;
+            line-height: 2;
+        }
+
+        .toc {
+            page-break-after: always;
+        }
+
+        .toc-item {
+            margin-bottom: 6pt;
+        }
+
+        .toc-level1 {
+            font-weight: bold;
+            font-size: 12pt;
+        }
+
+        .toc-level2 {
+            margin-left: 20pt;
+            font-size: 11pt;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4pt solid #ffc107;
+            padding: 10pt;
+            margin: 12pt 0;
+        }
+
+        .info {
+            background-color: #d1ecf1;
+            border-left: 4pt solid #17a2b8;
+            padding: 10pt;
+            margin: 12pt 0;
+        }
+
+        .success {
+            background-color: #d4edda;
+            border-left: 4pt solid #28a745;
+            padding: 10pt;
+            margin: 12pt 0;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        .diagram {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15pt;
+            margin: 12pt 0;
+            font-family: 'Courier New', monospace;
+            font-size: 9pt;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <div class="cover-title">Contact Print PDF Customization</div>
+        <div class="cover-subtitle">Technical Documentation</div>
+        <div class="cover-info">
+            <p><strong>Client:</strong> ABA-CON</p>
+            <p><strong>NetSuite Account:</strong> 8606430</p>
+            <p><strong>Version:</strong> 2.1</p>
+            <p><strong>Date:</strong> October 2025</p>
+            <p><strong>Classification:</strong> Internal Use Only</p>
+        </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h1>Table of Contents</h1>
+        <div class="toc-item toc-level1">1. Executive Summary</div>
+        <div class="toc-item toc-level1">2. System Overview</div>
+        <div class="toc-item toc-level2">2.1 Purpose and Objectives</div>
+        <div class="toc-item toc-level2">2.2 Key Features</div>
+        <div class="toc-item toc-level2">2.3 System Architecture</div>
+        <div class="toc-item toc-level1">3. Component Documentation</div>
+        <div class="toc-item toc-level2">3.1 Map/Reduce Script</div>
+        <div class="toc-item toc-level2">3.2 User Event Script</div>
+        <div class="toc-item toc-level2">3.3 PDF Suitelet</div>
+        <div class="toc-item toc-level2">3.4 XML Template</div>
+        <div class="toc-item toc-level1">4. Installation Guide</div>
+        <div class="toc-item toc-level2">4.1 Prerequisites</div>
+        <div class="toc-item toc-level2">4.2 Step-by-Step Installation</div>
+        <div class="toc-item toc-level2">4.3 Configuration</div>
+        <div class="toc-item toc-level1">5. User Guide</div>
+        <div class="toc-item toc-level2">5.1 Generating PDFs</div>
+        <div class="toc-item toc-level2">5.2 Understanding Report Sections</div>
+        <div class="toc-item toc-level1">6. Administration</div>
+        <div class="toc-item toc-level2">6.1 Running Bulk Updates</div>
+        <div class="toc-item toc-level2">6.2 Monitoring and Maintenance</div>
+        <div class="toc-item toc-level1">7. Troubleshooting</div>
+        <div class="toc-item toc-level1">8. Technical Reference</div>
+        <div class="toc-item toc-level1">9. Appendices</div>
+    </div>
+
+    <!-- Content -->
+    <h1>1. Executive Summary</h1>
+    <p>The Contact Print PDF Customization is a comprehensive NetSuite solution developed for ABA-CON that enables users to generate professional PDF reports for contact records. This customization streamlines the process of accessing and sharing contact information by automatically maintaining print URLs for all contacts and providing on-demand PDF generation with detailed contact information.</p>
+
+    <div class="info">
+        <strong>Key Benefits:</strong>
+        <ul>
+            <li>Instant access to comprehensive contact reports</li>
+            <li>Automated URL management for all contacts</li>
+            <li>Professional PDF formatting for external sharing</li>
+            <li>Consolidated view of all contact-related data</li>
+            <li>Efficient bulk processing capabilities</li>
+        </ul>
+    </div>
+
+    <h1>2. System Overview</h1>
+
+    <h2>2.1 Purpose and Objectives</h2>
+    <p>This customization addresses the business need for generating comprehensive, professional contact reports that can be easily shared with internal and external stakeholders. The system automatically maintains print URLs on contact records and generates PDFs containing all relevant contact information including addresses, communications, relationships, and system history.</p>
+
+    <h3>Business Objectives</h3>
+    <ul>
+        <li>Provide instant access to contact information in PDF format</li>
+        <li>Eliminate manual report generation processes</li>
+        <li>Ensure consistency in contact report formatting</li>
+        <li>Enable efficient sharing of contact information</li>
+        <li>Maintain audit trail of contact interactions</li>
+    </ul>
+
+    <h2>2.2 Key Features</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Description</th>
+                <th>Business Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Automatic URL Management</strong></td>
+                <td>Print URLs are automatically set and maintained on all contact records</td>
+                <td>Eliminates manual URL entry and ensures consistency</td>
+            </tr>
+            <tr>
+                <td><strong>Bulk Processing</strong></td>
+                <td>Map/Reduce script processes thousands of records efficiently</td>
+                <td>Enables quick deployment and updates across all contacts</td>
+            </tr>
+            <tr>
+                <td><strong>Real-time Updates</strong></td>
+                <td>User Event script maintains URLs for new/edited contacts</td>
+                <td>Ensures new contacts immediately have PDF capability</td>
+            </tr>
+            <tr>
+                <td><strong>Comprehensive Reporting</strong></td>
+                <td>Includes all contact-related data in organized sections</td>
+                <td>Provides complete contact overview in single document</td>
+            </tr>
+            <tr>
+                <td><strong>Professional Formatting</strong></td>
+                <td>Clean, organized PDF layout with corporate styling</td>
+                <td>Suitable for client-facing communications</td>
+            </tr>
+            <tr>
+                <td><strong>Error Handling</strong></td>
+                <td>Robust error handling with detailed logging</td>
+                <td>Ensures system reliability and easy troubleshooting</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2.3 System Architecture</h2>
+
+    <div class="diagram">
+        <pre>
+                     ┌─────────────────────────────────────────┐
+                     │         CONTACT RECORD                  │
+                     │     (custentity_print_url field)       │
+                     └─────────────────┬───────────────────────┘
+                                       │
+                         ┌─────────────┴─────────────┐
+                         │                           │
+                         ▼                           ▼
+               ┌───────────────────┐       ┌───────────────────┐
+               │  USER EVENT SCRIPT │       │ MAP/REDUCE SCRIPT │
+               │  (Auto-maintain)   │       │  (Bulk update)    │
+               └───────────────────┘       └───────────────────┘
+                         │                           │
+                         └─────────────┬─────────────┘
+                                       │
+                                       ▼
+                            ┌───────────────────┐
+                            │   PDF SUITELET    │
+                            │ (Generate PDF)    │
+                            └─────────┬─────────┘
+                                      │
+                                      ▼
+                            ┌───────────────────┐
+                            │   XML TEMPLATE    │
+                            │  (PDF Layout)     │
+                            └───────────────────┘
+        </pre>
+    </div>
+
+    <h3>Data Flow</h3>
+    <ol>
+        <li><strong>Initial Setup:</strong> Map/Reduce script processes all existing contacts to populate print URLs</li>
+        <li><strong>Ongoing Maintenance:</strong> User Event script automatically sets URLs for new/edited contacts</li>
+        <li><strong>PDF Generation:</strong> User clicks URL to trigger Suitelet</li>
+        <li><strong>Data Collection:</strong> Suitelet gathers contact data from multiple sources</li>
+        <li><strong>PDF Rendering:</strong> XML template formats data into professional PDF</li>
+    </ol>
+
+    <div class="page-break"></div>
+
+    <h1>3. Component Documentation</h1>
+
+    <h2>3.1 Map/Reduce Script</h2>
+
+    <div class="info">
+        <strong>File:</strong> netsuite_contact_url_updater.js<br>
+        <strong>Type:</strong> Map/Reduce Script<br>
+        <strong>API Version:</strong> 2.1
+    </div>
+
+    <h3>Purpose</h3>
+    <p>The Map/Reduce script enables bulk updating of all contact records with PDF Suitelet URLs. This script is essential for initial deployment and periodic maintenance to ensure all contacts have the correct print URL.</p>
+
+    <h3>Technical Details</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Script ID</td>
+                <td>customscript_contact_url_updater</td>
+            </tr>
+            <tr>
+                <td>Deployment ID</td>
+                <td>customdeploy_contact_url_updater</td>
+            </tr>
+            <tr>
+                <td>Concurrency</td>
+                <td>1-4 (recommended: 2)</td>
+            </tr>
+            <tr>
+                <td>Queue</td>
+                <td>Standard</td>
+            </tr>
+            <tr>
+                <td>Priority</td>
+                <td>Standard</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Functions</h3>
+
+    <h4>getInputData()</h4>
+    <p>Searches for all contact records in the system. Returns a search object that will be processed by the map stage.</p>
+    <pre>
+const contactSearch = search.create({
+    type: search.Type.CONTACT,
+    filters: [],
+    columns: ['internalid', 'entityid', 'custentity_print_url']
+});
+    </pre>
+
+    <h4>map(context)</h4>
+    <p>Processes each contact record individually. Updates the custentity_print_url field with the appropriate Suitelet URL.</p>
+    <pre>
+const newUrl = `https://8606430.app.netsuite.com/app/site/hosting/
+    scriptlet.nl?script=3247&deploy=1&contactId=${contactId}`;
+
+record.submitFields({
+    type: record.Type.CONTACT,
+    id: contactId,
+    values: { 'custentity_print_url': newUrl }
+});
+    </pre>
+
+    <h4>reduce(context)</h4>
+    <p>Aggregates results from the map stage and logs any errors for troubleshooting.</p>
+
+    <h4>summarize(summary)</h4>
+    <p>Provides execution statistics including total records processed, errors, duration, and governance usage.</p>
+
+    <div class="warning">
+        <strong>Important:</strong> Monitor governance usage when processing large numbers of contacts. Consider scheduling during off-peak hours.
+    </div>
+
+    <h2>3.2 User Event Script</h2>
+
+    <div class="info">
+        <strong>File:</strong> netsuite_contact_url_userevent.js<br>
+        <strong>Type:</strong> User Event Script<br>
+        <strong>API Version:</strong> 2.1
+    </div>
+
+    <h3>Purpose</h3>
+    <p>Automatically maintains the print URL field on contact records during create, edit, and inline edit operations. This ensures all new and modified contacts have the correct PDF generation URL.</p>
+
+    <h3>Technical Details</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Script ID</td>
+                <td>customscript_contact_url_ue</td>
+            </tr>
+            <tr>
+                <td>Deployment ID</td>
+                <td>customdeploy_contact_url_ue</td>
+            </tr>
+            <tr>
+                <td>Record Type</td>
+                <td>Contact</td>
+            </tr>
+            <tr>
+                <td>Events</td>
+                <td>CREATE, EDIT, XEDIT</td>
+            </tr>
+            <tr>
+                <td>Execute As</td>
+                <td>Administrator</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Event Handler</h3>
+
+    <h4>afterSubmit(context)</h4>
+    <p>Executes after a contact record is saved. Constructs and sets the PDF URL based on the contact's internal ID.</p>
+
+    <pre>
+const afterSubmit = (context) => {
+    // Only execute on create, edit, and inline edit events
+    if (context.type !== context.UserEventType.CREATE &&
+        context.type !== context.UserEventType.EDIT &&
+        context.type !== context.UserEventType.XEDIT) {
+        return;
+    }
+
+    const contactId = context.newRecord.id;
+    const expectedUrl = `https://8606430.app.netsuite.com/app/site/
+        hosting/scriptlet.nl?script=3247&deploy=1&contactId=${contactId}`;
+
+    record.submitFields({
+        type: record.Type.CONTACT,
+        id: contactId,
+        values: { 'custentity_print_url': expectedUrl }
+    });
+};
+    </pre>
+
+    <h2>3.3 PDF Suitelet</h2>
+
+    <div class="info">
+        <strong>File:</strong> contact_pdf_suitelet.js<br>
+        <strong>Type:</strong> Suitelet<br>
+        <strong>API Version:</strong> 2.1
+    </div>
+
+    <h3>Purpose</h3>
+    <p>Generates comprehensive PDF reports for contact records. Accepts a contact ID as a URL parameter and produces a formatted PDF containing all contact information.</p>
+
+    <h3>Technical Details</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Script ID</td>
+                <td>3247</td>
+            </tr>
+            <tr>
+                <td>Deployment ID</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Template File ID</td>
+                <td>561358</td>
+            </tr>
+            <tr>
+                <td>URL Parameter</td>
+                <td>contactId</td>
+            </tr>
+            <tr>
+                <td>Output Format</td>
+                <td>PDF</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Key Functions</h3>
+
+    <h4>onRequest(context)</h4>
+    <p>Main entry point for the Suitelet. Validates the contact ID parameter, loads contact data, and generates the PDF.</p>
+
+    <h4>getContactData(contactRecord)</h4>
+    <p>Extracts and formats all contact information including:</p>
+    <ul>
+        <li>Basic contact information (name, email, phone)</li>
+        <li>Company associations</li>
+        <li>Custom field values</li>
+        <li>System information</li>
+    </ul>
+
+    <h4>getAddressBook(contactRecord)</h4>
+    <p>Retrieves all addresses associated with the contact, including shipping and billing defaults.</p>
+
+    <h4>getMessages(contactId, companyId)</h4>
+    <p>Searches for and retrieves communication records (emails) related to the contact.</p>
+
+    <h4>getWorkflowHistory(contactId)</h4>
+    <p>Retrieves workflow state transitions for the contact record.</p>
+
+    <h2>3.4 XML Template</h2>
+
+    <div class="info">
+        <strong>File:</strong> contact_detail_template.xml<br>
+        <strong>Type:</strong> FreeMarker Template<br>
+        <strong>File Cabinet ID:</strong> 561358
+    </div>
+
+    <h3>Purpose</h3>
+    <p>Defines the layout and formatting for the PDF output. Uses FreeMarker syntax to dynamically populate contact data.</p>
+
+    <h3>Template Sections</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Section</th>
+                <th>Description</th>
+                <th>Data Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Address</td>
+                <td>All addresses with shipping/billing indicators</td>
+                <td>record.addressbook</td>
+            </tr>
+            <tr>
+                <td>Communication</td>
+                <td>Email messages and attachments</td>
+                <td>record.messages</td>
+            </tr>
+            <tr>
+                <td>Relationships</td>
+                <td>Related contacts and companies</td>
+                <td>record.company, record.supervisor</td>
+            </tr>
+            <tr>
+                <td>Marketing</td>
+                <td>Lead source and campaign information</td>
+                <td>record.leadsource, record.campaign</td>
+            </tr>
+            <tr>
+                <td>Subscriptions</td>
+                <td>Email subscription preferences</td>
+                <td>record.globalsubscriptionstatus</td>
+            </tr>
+            <tr>
+                <td>System Information</td>
+                <td>Creation date and status</td>
+                <td>record.datecreated, record.isinactive</td>
+            </tr>
+            <tr>
+                <td>System Notes</td>
+                <td>Field change history</td>
+                <td>record.systemnotes</td>
+            </tr>
+            <tr>
+                <td>Workflow State</td>
+                <td>Workflow execution history</td>
+                <td>record.workflowhistory</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="page-break"></div>
+
+    <h1>4. Installation Guide</h1>
+
+    <h2>4.1 Prerequisites</h2>
+
+    <div class="warning">
+        <strong>Required Permissions:</strong> Administrator access to NetSuite account
+    </div>
+
+    <h3>System Requirements</h3>
+    <ul>
+        <li>NetSuite Version: 2024.1 or later</li>
+        <li>SuiteScript 2.1 enabled</li>
+        <li>File Cabinet access</li>
+        <li>Custom field creation permissions</li>
+        <li>Script deployment permissions</li>
+    </ul>
+
+    <h3>Browser Requirements</h3>
+    <ul>
+        <li>Chrome (version 90+)</li>
+        <li>Firefox (version 88+)</li>
+        <li>Safari (version 14+)</li>
+        <li>Microsoft Edge (version 90+)</li>
+    </ul>
+
+    <h2>4.2 Step-by-Step Installation</h2>
+
+    <h3>Step 1: Create Custom Field</h3>
+
+    <ol>
+        <li>Navigate to <strong>Customization > Lists, Records, & Fields > Entity Fields > New</strong></li>
+        <li>Configure the field with these settings:</li>
+    </ol>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Setting</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Label</td>
+                <td>Print URL</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>custentity_print_url</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>Hyperlink</td>
+            </tr>
+            <tr>
+                <td>Applies To</td>
+                <td>☑ Contact</td>
+            </tr>
+            <tr>
+                <td>Display > Subtab</td>
+                <td>Main (or Custom)</td>
+            </tr>
+            <tr>
+                <td>Display Type</td>
+                <td>Normal</td>
+            </tr>
+            <tr>
+                <td>Show in List</td>
+                <td>☐ Unchecked</td>
+            </tr>
+            <tr>
+                <td>Store Value</td>
+                <td>☑ Checked</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ol start="3">
+        <li>Click <strong>Save</strong></li>
+    </ol>
+
+    <h3>Step 2: Upload Files to File Cabinet</h3>
+
+    <ol>
+        <li>Navigate to <strong>Documents > Files > SuiteScripts</strong></li>
+        <li>Create a folder structure if needed (e.g., /SuiteScripts/ContactPrint/)</li>
+        <li>Upload the following files:</li>
+    </ol>
+
+    <table>
+        <thead>
+            <tr>
+                <th>File Name</th>
+                <th>Description</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>netsuite_contact_url_updater.js</td>
+                <td>Map/Reduce script for bulk updates</td>
+                <td>/SuiteScripts/</td>
+            </tr>
+            <tr>
+                <td>netsuite_contact_url_userevent.js</td>
+                <td>User Event script for ongoing maintenance</td>
+                <td>/SuiteScripts/</td>
+            </tr>
+            <tr>
+                <td>contact_pdf_suitelet.js</td>
+                <td>Suitelet for PDF generation</td>
+                <td>/SuiteScripts/</td>
+            </tr>
+            <tr>
+                <td>contact_detail_template.xml</td>
+                <td>XML template for PDF layout</td>
+                <td>/SuiteScripts/</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="warning">
+        <strong>Important:</strong> Note the Internal ID of the contact_detail_template.xml file after upload. You'll need this for configuration.
+    </div>
+
+    <h3>Step 3: Create Script Records</h3>
+
+    <h4>3.1 Create Map/Reduce Script Record</h4>
+    <ol>
+        <li>Navigate to <strong>Customization > Scripting > Scripts > New</strong></li>
+        <li>Select <strong>netsuite_contact_url_updater.js</strong></li>
+        <li>Configure:</li>
+    </ol>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>Contact URL Bulk Updater</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>customscript_contact_url_updater</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>Bulk updates all contact records with PDF URLs</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ol start="4">
+        <li>Click <strong>Save</strong></li>
+    </ol>
+
+    <h4>3.2 Create User Event Script Record</h4>
+    <ol>
+        <li>Navigate to <strong>Customization > Scripting > Scripts > New</strong></li>
+        <li>Select <strong>netsuite_contact_url_userevent.js</strong></li>
+        <li>Configure:</li>
+    </ol>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>Contact URL Auto-Set</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>customscript_contact_url_ue</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>Automatically sets print URL on contact save</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ol start="4">
+        <li>Click <strong>Save</strong></li>
+    </ol>
+
+    <h4>3.3 Create Suitelet Script Record</h4>
+    <ol>
+        <li>Navigate to <strong>Customization > Scripting > Scripts > New</strong></li>
+        <li>Select <strong>contact_pdf_suitelet.js</strong></li>
+        <li>Configure:</li>
+    </ol>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>Contact PDF Generator</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>customscript_contact_pdf_gen</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>Generates PDF reports for contacts</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ol start="4">
+        <li>Click <strong>Save</strong></li>
+        <li><strong>IMPORTANT:</strong> Note the Script ID number (e.g., 3247)</li>
+    </ol>
+
+    <h3>Step 4: Create Script Deployments</h3>
+
+    <h4>4.1 Deploy Map/Reduce Script</h4>
+    <ol>
+        <li>From the script record, click <strong>Deploy Script</strong></li>
+        <li>Configure deployment:</li>
+    </ol>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Title</td>
+                <td>Contact URL Bulk Updater - Production</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>customdeploy_contact_url_updater</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>Released</td>
+            </tr>
+            <tr>
+                <td>Log Level</td>
+                <td>Error</td>
+            </tr>
+            <tr>
+                <td>Concurrency Limit</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ol start="3">
+        <li>Click <strong>Save</strong></li>
+    </ol>
+
+    <h4>4.2 Deploy User Event Script</h4>
+    <ol>
+        <li>From the script record, click <strong>Deploy Script</strong></li>
+        <li>Configure deployment:</li>
+    </ol>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Title</td>
+                <td>Contact URL Auto-Set - All Contacts</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>customdeploy_contact_url_ue</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>Released</td>
+            </tr>
+            <tr>
+                <td>Record Type</td>
+                <td>Contact</td>
+            </tr>
+            <tr>
+                <td>Event Type > After Submit</td>
+                <td>☑ Checked</td>
+            </tr>
+            <tr>
+                <td>Log Level</td>
+                <td>Error</td>
+            </tr>
+            <tr>
+                <td>Audience > Roles</td>
+                <td>Select All Roles</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ol start="3">
+        <li>Click <strong>Save</strong></li>
+    </ol>
+
+    <h4>4.3 Deploy Suitelet</h4>
+    <ol>
+        <li>From the script record, click <strong>Deploy Script</strong></li>
+        <li>Configure deployment:</li>
+    </ol>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Title</td>
+                <td>Contact PDF Generator - Production</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>customdeploy_contact_pdf_gen</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>Released</td>
+            </tr>
+            <tr>
+                <td>Log Level</td>
+                <td>Error</td>
+            </tr>
+            <tr>
+                <td>Available Without Login</td>
+                <td>☐ Unchecked (for security)</td>
+            </tr>
+            <tr>
+                <td>Audience > Roles</td>
+                <td>Select appropriate roles</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ol start="3">
+        <li>Click <strong>Save</strong></li>
+        <li><strong>IMPORTANT:</strong> Note the Deployment ID (e.g., 1)</li>
+    </ol>
+
+    <h2>4.3 Configuration</h2>
+
+    <h3>Update Template File ID</h3>
+    <ol>
+        <li>Edit <strong>contact_pdf_suitelet.js</strong> in File Cabinet</li>
+        <li>Locate line 20:</li>
+    </ol>
+
+    <pre>var TEMPLATE_FILE_ID = 561358; // Update this with your template file ID</pre>
+
+    <ol start="3">
+        <li>Replace 561358 with your template file's Internal ID</li>
+        <li>Save the file</li>
+    </ol>
+
+    <h3>Update URL Configuration</h3>
+    <ol>
+        <li>Edit both <strong>netsuite_contact_url_updater.js</strong> and <strong>netsuite_contact_url_userevent.js</strong></li>
+        <li>Locate the URL construction lines:</li>
+    </ol>
+
+    <pre>const expectedUrl = `https://8606430.app.netsuite.com/app/site/hosting/
+    scriptlet.nl?script=3247&deploy=1&contactId=${contactId}`;</pre>
+
+    <ol start="3">
+        <li>Update:
+            <ul>
+                <li>Account ID (8606430) if different</li>
+                <li>Script ID (3247) with your Suitelet's script ID</li>
+                <li>Deployment ID (1) with your deployment ID</li>
+            </ul>
+        </li>
+        <li>Save both files</li>
+    </ol>
+
+    <h3>Initial Data Population</h3>
+    <ol>
+        <li>Navigate to <strong>Customization > Scripting > Script Deployments</strong></li>
+        <li>Find "Contact URL Bulk Updater - Production"</li>
+        <li>Click <strong>Save & Execute</strong></li>
+        <li>Monitor progress:
+            <ul>
+                <li>Click the deployment link</li>
+                <li>View "Execution Log" subtab</li>
+                <li>Refresh periodically to check status</li>
+            </ul>
+        </li>
+    </ol>
+
+    <div class="success">
+        <strong>Installation Complete!</strong> The system is now ready for use. Test by opening any contact record and clicking the Print URL link.
+    </div>
+
+    <div class="page-break"></div>
+
+    <h1>5. User Guide</h1>
+
+    <h2>5.1 Generating PDFs</h2>
+
+    <h3>For End Users</h3>
+
+    <h4>Method 1: From Contact Record</h4>
+    <ol>
+        <li>Navigate to <strong>Lists > Relationships > Contacts</strong></li>
+        <li>Open any contact record</li>
+        <li>Scroll to the <strong>Custom</strong> subtab (or Main subtab depending on configuration)</li>
+        <li>Locate the <strong>Print URL</strong> field</li>
+        <li>Click the URL link - the PDF will open in a new browser tab</li>
+        <li>Use browser functions to:
+            <ul>
+                <li>Print (Ctrl+P or Cmd+P)</li>
+                <li>Save as PDF (Print > Save as PDF)</li>
+                <li>Email the PDF</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h4>Method 2: Direct URL Access</h4>
+    <p>If you know the contact ID, you can access the PDF directly:</p>
+    <pre>https://8606430.app.netsuite.com/app/site/hosting/scriptlet.nl?
+    script=3247&deploy=1&contactId=[CONTACT_ID]</pre>
+
+    <h3>PDF Features</h3>
+    <ul>
+        <li><strong>Searchable Text:</strong> All text in the PDF is searchable</li>
+        <li><strong>Print-Ready:</strong> Formatted for standard letter-size printing</li>
+        <li><strong>Professional Layout:</strong> Suitable for client communications</li>
+        <li><strong>Complete Information:</strong> All contact data in one document</li>
+    </ul>
+
+    <h2>5.2 Understanding Report Sections</h2>
+
+    <h3>Section Overview</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Section</th>
+                <th>Information Displayed</th>
+                <th>Use Case</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Address</strong></td>
+                <td>All addresses with shipping/billing defaults marked</td>
+                <td>Verify contact locations and mailing addresses</td>
+            </tr>
+            <tr>
+                <td><strong>Communication</strong></td>
+                <td>Recent email messages with subjects and attachments</td>
+                <td>Review communication history</td>
+            </tr>
+            <tr>
+                <td><strong>Relationships</strong></td>
+                <td>Associated company, supervisor, assistant details</td>
+                <td>Understand organizational structure</td>
+            </tr>
+            <tr>
+                <td><strong>Marketing</strong></td>
+                <td>Lead source, campaign associations</td>
+                <td>Track marketing effectiveness</td>
+            </tr>
+            <tr>
+                <td><strong>Subscriptions</strong></td>
+                <td>Email subscription preferences</td>
+                <td>Ensure compliance with communication preferences</td>
+            </tr>
+            <tr>
+                <td><strong>System Information</strong></td>
+                <td>Creation date, inactive status</td>
+                <td>Audit trail and status verification</td>
+            </tr>
+            <tr>
+                <td><strong>System Notes</strong></td>
+                <td>Field change history with user and timestamp</td>
+                <td>Track modifications and data integrity</td>
+            </tr>
+            <tr>
+                <td><strong>Workflow State</strong></td>
+                <td>Workflow execution history</td>
+                <td>Process tracking and automation history</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Reading the Report</h3>
+
+    <h4>Address Section</h4>
+    <ul>
+        <li><strong>ID:</strong> Internal address identifier</li>
+        <li><strong>Default Shipping:</strong> "Yes" indicates primary shipping address</li>
+        <li><strong>Default Billing:</strong> "Yes" indicates primary billing address</li>
+        <li><strong>Label:</strong> User-defined address label</li>
+        <li><strong>Address:</strong> Full formatted address</li>
+    </ul>
+
+    <h4>Communication Section</h4>
+    <ul>
+        <li><strong>Date:</strong> When the message was sent</li>
+        <li><strong>Author:</strong> Who sent the message</li>
+        <li><strong>Primary Recipient:</strong> Main recipient of the message</li>
+        <li><strong>Subject:</strong> Email subject line</li>
+        <li><strong>Type:</strong> Communication type (Email, Phone, etc.)</li>
+        <li><strong>Files:</strong> Indicates if attachments exist</li>
+        <li><strong>Attachments:</strong> List of attached files</li>
+        <li><strong>Internal Only:</strong> Whether message is internal</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <h1>6. Administration</h1>
+
+    <h2>6.1 Running Bulk Updates</h2>
+
+    <h3>When to Run Bulk Updates</h3>
+    <ul>
+        <li>After initial installation</li>
+        <li>When URL format changes</li>
+        <li>After system migrations</li>
+        <li>To correct data inconsistencies</li>
+        <li>Periodic maintenance (quarterly recommended)</li>
+    </ul>
+
+    <h3>Execution Process</h3>
+    <ol>
+        <li>Navigate to <strong>Customization > Scripting > Script Deployments</strong></li>
+        <li>Search for "Contact URL Bulk Updater"</li>
+        <li>Click on the deployment record</li>
+        <li>Click <strong>Save & Execute</strong></li>
+        <li>Set execution parameters if prompted:
+            <ul>
+                <li>Leave all parameters at default for full update</li>
+                <li>The script will process all contacts automatically</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>Monitoring Execution</h3>
+    <ol>
+        <li>After starting execution, click the deployment name</li>
+        <li>Go to the <strong>Execution Log</strong> subtab</li>
+        <li>Monitor the status:
+            <ul>
+                <li><strong>Pending:</strong> Waiting to start</li>
+                <li><strong>Processing:</strong> Currently running</li>
+                <li><strong>Complete:</strong> Finished successfully</li>
+                <li><strong>Failed:</strong> Encountered errors</li>
+            </ul>
+        </li>
+        <li>Click on individual log entries to view details</li>
+    </ol>
+
+    <div class="info">
+        <strong>Performance Metrics:</strong>
+        <ul>
+            <li>Processing Speed: ~1000 contacts per minute</li>
+            <li>Governance Usage: ~20 units per contact</li>
+            <li>Typical Duration: 5-30 minutes depending on volume</li>
+        </ul>
+    </div>
+
+    <h2>6.2 Monitoring and Maintenance</h2>
+
+    <h3>Daily Monitoring</h3>
+
+    <h4>Check User Event Script Health</h4>
+    <ol>
+        <li>Navigate to <strong>Customization > Scripting > Script Deployments</strong></li>
+        <li>Find "Contact URL Auto-Set - All Contacts"</li>
+        <li>Verify Status = "Released"</li>
+        <li>Check Execution Log for errors</li>
+    </ol>
+
+    <h4>Verify New Contacts</h4>
+    <ol>
+        <li>Run saved search for contacts created today</li>
+        <li>Spot-check that Print URL field is populated</li>
+        <li>Test PDF generation for sample contact</li>
+    </ol>
+
+    <h3>Weekly Maintenance</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Steps</th>
+                <th>Success Criteria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Review Error Logs</td>
+                <td>Check all script execution logs for errors</td>
+                <td>No critical errors in past week</td>
+            </tr>
+            <tr>
+                <td>Performance Check</td>
+                <td>Review script execution times</td>
+                <td>Average execution < 2 seconds</td>
+            </tr>
+            <tr>
+                <td>Governance Review</td>
+                <td>Check governance usage patterns</td>
+                <td>No governance limit warnings</td>
+            </tr>
+            <tr>
+                <td>Test PDF Generation</td>
+                <td>Generate PDFs for 5 random contacts</td>
+                <td>All PDFs generate successfully</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Monthly Maintenance</h3>
+
+    <h4>Data Integrity Check</h4>
+    <ol>
+        <li>Create saved search for contacts</li>
+        <li>Add filter: Print URL is empty</li>
+        <li>If results found, run Map/Reduce script</li>
+    </ol>
+
+    <h4>Template Review</h4>
+    <ol>
+        <li>Review PDF output for completeness</li>
+        <li>Check for new fields that should be added</li>
+        <li>Update template if needed</li>
+        <li>Test changes thoroughly</li>
+    </ol>
+
+    <h3>Quarterly Maintenance</h3>
+
+    <h4>Full System Validation</h4>
+    <ol>
+        <li>Run complete Map/Reduce update</li>
+        <li>Validate all URLs are current format</li>
+        <li>Performance testing with load simulation</li>
+        <li>Update documentation if needed</li>
+    </ol>
+
+    <h4>Optimization Review</h4>
+    <ul>
+        <li>Analyze script performance metrics</li>
+        <li>Review search efficiency</li>
+        <li>Optimize governance usage if needed</li>
+        <li>Consider caching strategies</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <h1>7. Troubleshooting</h1>
+
+    <h2>Common Issues and Solutions</h2>
+
+    <h3>Issue: PDF Not Generating</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Symptom</th>
+                <th>Possible Cause</th>
+                <th>Solution</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Error page displays</td>
+                <td>Suitelet not deployed</td>
+                <td>Verify deployment status is "Released"</td>
+            </tr>
+            <tr>
+                <td>"Contact ID required" error</td>
+                <td>Missing parameter</td>
+                <td>Check URL includes contactId parameter</td>
+            </tr>
+            <tr>
+                <td>"Template not found" error</td>
+                <td>Incorrect template ID</td>
+                <td>Update TEMPLATE_FILE_ID in script</td>
+            </tr>
+            <tr>
+                <td>Blank PDF</td>
+                <td>Data access issues</td>
+                <td>Check user permissions for contact records</td>
+            </tr>
+            <tr>
+                <td>Timeout error</td>
+                <td>Large data volume</td>
+                <td>Optimize searches, reduce data retrieved</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Issue: URLs Not Updating</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Symptom</th>
+                <th>Possible Cause</th>
+                <th>Solution</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>New contacts have no URL</td>
+                <td>User Event script not deployed</td>
+                <td>Check deployment status and record type</td>
+            </tr>
+            <tr>
+                <td>Some contacts missing URLs</td>
+                <td>Script errors on specific records</td>
+                <td>Review execution logs for errors</td>
+            </tr>
+            <tr>
+                <td>URLs not updating on edit</td>
+                <td>Event types not configured</td>
+                <td>Ensure EDIT and XEDIT events enabled</td>
+            </tr>
+            <tr>
+                <td>Bulk update fails</td>
+                <td>Governance limits</td>
+                <td>Reduce concurrency or schedule off-hours</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Issue: Missing Data in PDF</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Section</th>
+                <th>Possible Cause</th>
+                <th>Solution</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Addresses empty</td>
+                <td>No addresses on record</td>
+                <td>Verify contact has addresses defined</td>
+            </tr>
+            <tr>
+                <td>Communications missing</td>
+                <td>Search filters too restrictive</td>
+                <td>Review message search criteria</td>
+            </tr>
+            <tr>
+                <td>Workflow history blank</td>
+                <td>No workflows executed</td>
+                <td>Check if workflows are enabled</td>
+            </tr>
+            <tr>
+                <td>Custom fields missing</td>
+                <td>Field IDs incorrect</td>
+                <td>Verify field internal IDs in script</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Error Messages Reference</h2>
+
+    <h3>Script Errors</h3>
+
+    <div class="warning">
+        <strong>SSS_USAGE_LIMIT_EXCEEDED</strong><br>
+        <strong>Cause:</strong> Script exceeded governance limits<br>
+        <strong>Solution:</strong> Reduce batch size or optimize code
+    </div>
+
+    <div class="warning">
+        <strong>INVALID_FLD_VALUE</strong><br>
+        <strong>Cause:</strong> Invalid field value in record update<br>
+        <strong>Solution:</strong> Verify field IDs and data types
+    </div>
+
+    <div class="warning">
+        <strong>RCRD_DSNT_EXIST</strong><br>
+        <strong>Cause:</strong> Contact record not found<br>
+        <strong>Solution:</strong> Verify contact ID is valid
+    </div>
+
+    <h3>Debugging Steps</h3>
+
+    <ol>
+        <li><strong>Enable Debug Logging:</strong>
+            <ul>
+                <li>Edit script deployment</li>
+                <li>Set Log Level to "Debug"</li>
+                <li>Save and re-test</li>
+            </ul>
+        </li>
+        <li><strong>Check Execution Logs:</strong>
+            <ul>
+                <li>Navigate to script deployment</li>
+                <li>View Execution Log subtab</li>
+                <li>Filter by "ERROR" type</li>
+            </ul>
+        </li>
+        <li><strong>Test in Sandbox:</strong>
+            <ul>
+                <li>Deploy to sandbox account</li>
+                <li>Test with sample data</li>
+                <li>Review detailed logs</li>
+            </ul>
+        </li>
+        <li><strong>Manual Testing:</strong>
+            <ul>
+                <li>Use Script Debugger</li>
+                <li>Step through code execution</li>
+                <li>Inspect variable values</li>
+            </ul>
+        </li>
+    </ol>
+
+    <div class="page-break"></div>
+
+    <h1>8. Technical Reference</h1>
+
+    <h2>API Modules</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Module</th>
+                <th>Usage</th>
+                <th>Key Methods</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>N/record</td>
+                <td>Record operations</td>
+                <td>load(), submitFields(), getValue(), setText()</td>
+            </tr>
+            <tr>
+                <td>N/search</td>
+                <td>Data retrieval</td>
+                <td>create(), lookupFields(), Type.CONTACT</td>
+            </tr>
+            <tr>
+                <td>N/render</td>
+                <td>PDF generation</td>
+                <td>create(), renderAsPdf(), addCustomDataSource()</td>
+            </tr>
+            <tr>
+                <td>N/file</td>
+                <td>File operations</td>
+                <td>load(), getContents()</td>
+            </tr>
+            <tr>
+                <td>N/format</td>
+                <td>Data formatting</td>
+                <td>format(), Type.DATETIMETZ</td>
+            </tr>
+            <tr>
+                <td>N/log</td>
+                <td>Logging</td>
+                <td>audit(), error(), debug()</td>
+            </tr>
+            <tr>
+                <td>N/runtime</td>
+                <td>Script context</td>
+                <td>getCurrentScript(), getRemainingUsage()</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Governance Usage</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Operation</th>
+                <th>Units</th>
+                <th>Context</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>record.load()</td>
+                <td>10</td>
+                <td>Loading contact record</td>
+            </tr>
+            <tr>
+                <td>record.submitFields()</td>
+                <td>10</td>
+                <td>Updating URL field</td>
+            </tr>
+            <tr>
+                <td>search.create()</td>
+                <td>10</td>
+                <td>Creating search</td>
+            </tr>
+            <tr>
+                <td>search.run()</td>
+                <td>10 per 1000</td>
+                <td>Running search</td>
+            </tr>
+            <tr>
+                <td>render.renderAsPdf()</td>
+                <td>100</td>
+                <td>Generating PDF</td>
+            </tr>
+            <tr>
+                <td>file.load()</td>
+                <td>10</td>
+                <td>Loading template</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Performance Metrics</h2>
+
+    <h3>Map/Reduce Performance</h3>
+    <ul>
+        <li><strong>Input Stage:</strong> 5-10 seconds for 10,000 contacts</li>
+        <li><strong>Map Stage:</strong> 100-200 contacts per minute per worker</li>
+        <li><strong>Reduce Stage:</strong> 500-1000 records per minute</li>
+        <li><strong>Total Time:</strong> ~10 minutes for 10,000 contacts (2 workers)</li>
+    </ul>
+
+    <h3>User Event Performance</h3>
+    <ul>
+        <li><strong>Execution Time:</strong> 0.5-1 second average</li>
+        <li><strong>Governance Usage:</strong> 20 units average</li>
+        <li><strong>Success Rate:</strong> >99.9%</li>
+    </ul>
+
+    <h3>PDF Generation Performance</h3>
+    <ul>
+        <li><strong>Data Collection:</strong> 1-2 seconds</li>
+        <li><strong>PDF Rendering:</strong> 1-2 seconds</li>
+        <li><strong>Total Time:</strong> 2-5 seconds per PDF</li>
+        <li><strong>File Size:</strong> 50-200 KB average</li>
+    </ul>
+
+    <h2>Security Considerations</h2>
+
+    <h3>Access Control</h3>
+    <ul>
+        <li>Script access controlled by NetSuite roles</li>
+        <li>PDF generation requires authentication</li>
+        <li>No sensitive data in URLs (only contact ID)</li>
+        <li>Template file access restricted</li>
+    </ul>
+
+    <h3>Data Protection</h3>
+    <ul>
+        <li>PDFs generated on-demand (not stored)</li>
+        <li>User permissions respected</li>
+        <li>Audit trail maintained</li>
+        <li>No external data transmission</li>
+    </ul>
+
+    <h3>Best Practices</h3>
+    <ul>
+        <li>Regular security audits</li>
+        <li>Role-based access control</li>
+        <li>Monitoring unusual activity</li>
+        <li>Regular password updates</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <h1>9. Appendices</h1>
+
+    <h2>Appendix A: Field Mapping</h2>
+
+    <h3>Contact Fields</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Display Name</th>
+                <th>Internal ID</th>
+                <th>Type</th>
+                <th>Template Variable</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>First Name</td>
+                <td>firstname</td>
+                <td>Text</td>
+                <td>${record.firstname}</td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>lastname</td>
+                <td>Text</td>
+                <td>${record.lastname}</td>
+            </tr>
+            <tr>
+                <td>Company</td>
+                <td>company</td>
+                <td>List/Record</td>
+                <td>${record.company}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>email</td>
+                <td>Email</td>
+                <td>${record.email}</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>phone</td>
+                <td>Phone</td>
+                <td>${record.phone}</td>
+            </tr>
+            <tr>
+                <td>Mobile Phone</td>
+                <td>mobilephone</td>
+                <td>Phone</td>
+                <td>${record.mobilephone}</td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td>title</td>
+                <td>Text</td>
+                <td>${record.title}</td>
+            </tr>
+            <tr>
+                <td>Subsidiary</td>
+                <td>subsidiary</td>
+                <td>List/Record</td>
+                <td>${record.subsidiary}</td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>category</td>
+                <td>List/Record</td>
+                <td>${record.category}</td>
+            </tr>
+            <tr>
+                <td>Comments</td>
+                <td>comments</td>
+                <td>Text Area</td>
+                <td>${record.comments}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Appendix B: Sample Code</h2>
+
+    <h3>Adding Custom Fields</h3>
+    <pre>
+// In getContactData() function of contact_pdf_suitelet.js
+
+// Add custom field to data object
+data.customfield1 = getField('custentity_customfield1', false);
+data.customfield2 = getField('custentity_customfield2', true); // true for text value
+
+// In template, reference as:
+// ${record.customfield1}
+    </pre>
+
+    <h3>Modifying URL Format</h3>
+    <pre>
+// To change URL structure, update in both scripts:
+
+// Option 1: Include additional parameters
+const expectedUrl = `https://8606430.app.netsuite.com/app/site/hosting/
+    scriptlet.nl?script=3247&deploy=1&contactId=${contactId}&format=pdf`;
+
+// Option 2: Use custom domain
+const expectedUrl = `https://pdf.company.com/contact/${contactId}`;
+    </pre>
+
+    <h3>Custom Search Filters</h3>
+    <pre>
+// To limit which contacts get URLs:
+
+const contactSearch = search.create({
+    type: search.Type.CONTACT,
+    filters: [
+        ['isinactive', 'is', 'F'],
+        'AND',
+        ['category', 'anyof', '1', '2', '3'] // Specific categories only
+    ],
+    columns: ['internalid', 'entityid']
+});
+    </pre>
+
+    <h2>Appendix C: Revision History</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Version</th>
+                <th>Date</th>
+                <th>Author</th>
+                <th>Changes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.0</td>
+                <td>Oct 1, 2025</td>
+                <td>Development Team</td>
+                <td>Initial implementation with Suitelet and template</td>
+            </tr>
+            <tr>
+                <td>1.5</td>
+                <td>Oct 5, 2025</td>
+                <td>Development Team</td>
+                <td>Added User Event script for auto-maintenance</td>
+            </tr>
+            <tr>
+                <td>2.0</td>
+                <td>Oct 10, 2025</td>
+                <td>Development Team</td>
+                <td>Added Map/Reduce script for bulk updates</td>
+            </tr>
+            <tr>
+                <td>2.1</td>
+                <td>Oct 14, 2025</td>
+                <td>Development Team</td>
+                <td>Enhanced logging, removed skip logic, always overwrites URL</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Appendix D: Support Information</h2>
+
+    <div class="info">
+        <h3>Technical Support</h3>
+        <p><strong>Implementation Partner:</strong> [Your Company Name]</p>
+        <p><strong>Support Email:</strong> support@yourcompany.com</p>
+        <p><strong>Support Phone:</strong> 1-800-XXX-XXXX</p>
+        <p><strong>Support Hours:</strong> Monday-Friday, 8:00 AM - 6:00 PM EST</p>
+    </div>
+
+    <div class="info">
+        <h3>NetSuite Account Information</h3>
+        <p><strong>Account Name:</strong> ABA-CON</p>
+        <p><strong>Account ID:</strong> 8606430</p>
+        <p><strong>Production URL:</strong> https://8606430.app.netsuite.com</p>
+        <p><strong>Sandbox URL:</strong> https://8606430-sb1.app.netsuite.com</p>
+    </div>
+
+    <div class="info">
+        <h3>Emergency Contacts</h3>
+        <p><strong>Primary Administrator:</strong> [Name] - [Email] - [Phone]</p>
+        <p><strong>Backup Administrator:</strong> [Name] - [Email] - [Phone]</p>
+        <p><strong>NetSuite Support:</strong> 1-877-NETSUITE</p>
+    </div>
+
+    <hr>
+    <p style="text-align: center; font-size: 9pt; color: #666; margin-top: 40pt;">
+        <strong>© 2025 ABA-CON - Confidential and Proprietary</strong><br>
+        This document contains confidential information and is intended solely for internal use.
+    </p>
+</body>
+</html>

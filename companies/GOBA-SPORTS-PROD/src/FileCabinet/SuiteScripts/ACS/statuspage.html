@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Page</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #222;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Center table */
+        table {
+            margin: 0 auto;
+        }
+
+        /* Default Table Style */
+        table {
+            color: #000;
+            background: white;
+            border: 1px solid grey;
+            font-size: 12pt;
+            border-collapse: collapse;
+        }
+
+        table thead th,
+        table tfoot th {
+            color: #777;
+            background: rgba(0, 0, 0, .1);
+        }
+
+        table caption {
+            padding: .5em;
+        }
+
+        table th,
+        table td {
+            padding: .5em;
+            border: 1px solid lightgrey;
+        }
+
+        table>thead>tr:nth-child(1)>th {
+            background-color: midnightblue;
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px #000000;
+        }
+
+        table td {
+            text-align: center;
+        }
+
+        :root {
+            --rotate: 0.00turn;
+            --piebg: #eee;
+        }
+
+        .pie {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #eee;
+            background-image: linear-gradient(to right, transparent 50%, #4CC9D8 0);
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .pie::before {
+            content: "";
+            display: block;
+            margin-left: 50%;
+            height: 100%;
+            border-radius: 0 100% 100% 0/50%;
+            background-color: inherit;
+            transform-origin: left;
+        }
+
+        .pie::after {
+            content: attr(data-value);
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            margin: auto;
+            border-radius: 50%;
+            background-color: #fff;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            text-align: center;
+            font: 900 20px/41px Tahoma;
+        }
+
+        .pie:before {
+            background-color: var(--piebg);
+            transform: rotate(var(--rotate));
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 56px; margin: -8px;background-color: #9e9e9e;">
+        <a href="/app/center/card.nl?sc=-29&whence=" aria-label="Dashboard" style="cursor: pointer;">
+            <img src="/images/logos/netsuite-oracle.svg" style="padding: 13px 24px;">
+            <svg style="padding: 18px;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve" aria-labelledby="icoHomeTitle" role="img">
+                <title id="icoHomeTitle">Home</title>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5,10.5l10-10h1l10,10v2h-1l-9-9h-1l-9,9h-1V10.5z"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5,0.5v2l3,3v-5H14.5z"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5,5.5h-1l-7,7v7h15v-7L11.5,5.5z M13.5,16.5h-5v-5h5V16.5z"></path>
+            </svg>
+        </a>
+        <a id="goback" href="#" style="position: absolute;padding: 16px;">
+            <svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+                <rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+                <g transform="matrix(1.11 0 0 1.11 12 12)" >
+                    <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12)" d="M 12 3 C 7.027344 3 3 7.027344 3 12 C 3 16.972656 7.027344 21 12 21 C 16.972656 21 21 16.972656 21 12 C 21 7.027344 16.972656 3 12 3 Z M 18 13 L 11 13 L 13.292969 15.292969 L 11.589844 17 L 6.589844 12 L 11.589844 7 L 13.292969 8.707031 L 11 11 L 18 11 Z" stroke-linecap="round" />
+                </g>
+            </svg>
+        </a>
+    </div>
+    <div class="center">
+        <table>
+            <thead>
+                <tr>
+                    <th id="$task_title" colspan="5">STATUS PAGE: "---"</th>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <th>Stage</th>
+                    <th>Ago</th>
+                    <th title="progress in %">%</th>
+                    <th>refresh in</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="$status">-</td>
+                    <td id="$stage">-</td>
+                    <td id="$timeago" title="---">-</td>
+                    <td title="progress in %">
+                        <div id="$completion" class="pie" data-value="0"></div>
+                    </td>
+                    <td id="$countdown">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script type="text/javascript">
+    const params = new URLSearchParams(document.location.search);
+    const task_id = params.get("task_id");
+    const task_title = params.get("task_title");
+    const timestamp = Number(params.get("timestamp"));
+    const url_of_task_handler = params.get("url_of_task_handler");
+
+    document.getElementById('goback').href = `/app/site/hosting/scriptlet.nl?${params.get("entryformquerystring")}`;
+    
+
+    const HISTORY = [];
+    let MAX = 0;
+
+    function timeAgo(sec) {
+        if (sec >= 86400000) return (sec / 86400000 | 0) + ' days';
+        else if (sec >= 3600000) return (sec / 3600000 | 0) + ' hours';
+        else return (sec / 60000 | 0) + ' minutes';
+    }
+    const STATUS_BG = {
+        COMPLETE: 'lime',
+        FAILED: 'red',
+        PENDING: 'lightblue',
+        PROCESSING: 'lightgreen'
+    };
+    let counter = 100;
+    let delay = 100;
+
+    function handleVisibilityChange() {
+        delay = document.visibilityState == "visible" ? 100 : 500;
+    }
+    document.addEventListener("visibilitychange", handleVisibilityChange, false);
+    const el_task_title = document.getElementById('$task_title');
+    const status = document.getElementById('$status');
+    const stage = document.getElementById('$stage');
+    const timeago = document.getElementById('$timeago');
+    const completion = document.getElementById('$completion');
+    const countdown = document.getElementById('$countdown');
+
+    timeago.title = new Date(timestamp);
+    el_task_title.textContent = `STATUS PAGE: "${task_title}"`;
+
+    function updateTable(taskStatus) {
+        if (HISTORY.length > 1) {
+            const index = HISTORY.length - 1;
+            const objCurrent = HISTORY[index];
+            const objPrevious = HISTORY[index - 1];
+            //if (!obj.pending) return;
+            if (objCurrent.pending && objPrevious.pending) {
+                const cur = (objCurrent.ts - objPrevious.ts) / (objPrevious.pending - objCurrent.pending) || 1;
+                MAX = Math.max(MAX, cur);
+                console.log(cur, MAX);
+            }
+        }
+        status.textContent = taskStatus.status;
+        status.style.backgroundColor = STATUS_BG[taskStatus.status];
+
+        stage.textContent = taskStatus.stage || '';
+
+        timeago.textContent = timeAgo(+new Date() - timestamp);
+
+        // PIE chart showing % of completion based on https://codepen.io/oliviale/pen/YqEgPw
+        completion.dataset.value = Math.round(taskStatus.completion);
+        if (taskStatus.completion >= 50) {
+            document.documentElement.style.setProperty('--piebg', '#4CC9D8');
+            document.documentElement.style.setProperty('--rotate', `${(taskStatus.completion-50)/100}turn`);
+        } else {
+            document.documentElement.style.setProperty('--piebg', '#eee');
+            document.documentElement.style.setProperty('--rotate', `${taskStatus.completion/100}turn`);
+        }
+        document.title = taskStatus.completion + '% - ' + task_title;
+
+        if (taskStatus.status[0] != 'P') {
+            countdown.textContent = '-';
+            countdown.style.backgroundColor = 'lightgrey';
+        }
+        console.log('draw on graph', taskStatus);
+    }
+
+    // {"status":"PROCESSING","stage":"SUMMARIZE","completion":33.33}
+    // {"status":"FAILED","stage":null,"completion":33.33}
+
+    function getTaskStatus(url) {
+        countdown.textContent = '...';
+        fetch(url)
+            .then(res => res.json())
+            .then(taskStatus => {
+                taskStatus.ts = +new Date();
+                if (taskStatus.status[0] == 'P') {
+                    HISTORY.push(taskStatus);
+                    loop(url);
+                }
+                updateTable(taskStatus);
+            })
+            .catch(err => {
+                status.textContent = err;
+                console.log(err);
+            });
+    }
+
+    function loop(url) {
+        setTimeout(() => {
+            countdown.textContent = (counter / 10).toFixed(1);
+            // stop reloading on FAILURE or COMPLETE
+            if (counter-- < 1) {
+                countdown.textContent = 'loading...';
+                //location.reload();
+                getTaskStatus(url);
+                counter = 100;
+                //countdown.textContent = (counter / 10).toFixed(1);
+            } else {
+                loop(url);
+            }
+        }, delay);
+    };
+    if (task_id) {
+        //getTaskStatus(`/app/site/hosting/restlet.nl?script=936&deploy=1&task_id=${task_id}`);
+        getTaskStatus(`${url_of_task_handler}&task_id=${task_id}`);
+    } else {
+        console.log('%c Missing Task ID! ', 'background: #222; color: #bada55');
+        
+        if (params.get("error")) {
+            el_task_title.style.backgroundColor = 'red';
+            el_task_title.textContent = `ERROR: "${params.get("error")}"`;
+        }
+    }
+</script>
+
+</html>

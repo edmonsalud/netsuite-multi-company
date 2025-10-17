@@ -1,0 +1,53 @@
+User Name,Email,Roles,Department,Status,General Access,Global Permissions,Login Access,Risk Level,Recommendations
+Mahesh Pragada,mahesh.babu.pragada@oracle.com,"Mobile - Administrator, Administrator",External - Oracle,Active,Full Administrator Access,Not Listed,Active,CRITICAL,"IMMEDIATE REVIEW REQUIRED - Oracle consultant with FULL Administrator access. Verify if Oracle implementation/support engagement is still active. If complete, disable account immediately. If ongoing, consider downgrading to limited support role with MFA enforcement."
+Ryan F,ryan.fielding@oracle.com,"Mobile - Administrator, Administrator",External - Oracle,Active,Full Administrator Access,Not Listed,Active,CRITICAL,"IMMEDIATE REVIEW REQUIRED - Oracle consultant with FULL Administrator access. Appears to be duplicate account with Ryan.Fielding@NetSuite.com. Verify if engagement is complete. Disable or consolidate accounts. Enforce MFA if access still required."
+Ryan Fielding,Ryan.Fielding@NetSuite.com,Administrator,External - NetSuite,Active,Full Administrator Access,Not Listed,Active,CRITICAL,"IMMEDIATE REVIEW REQUIRED - NetSuite consultant with FULL Administrator access. May be duplicate of ryan.fielding@oracle.com account. Verify if NetSuite support engagement is still active. If complete, disable immediately. If ongoing, enforce MFA and time-limited access."
+Prashant Chandra,pchandra@netsuite.com,Administrator,External - NetSuite,Active,Full Administrator Access,Not Listed,Active,CRITICAL,"IMMEDIATE REVIEW REQUIRED - NetSuite consultant with FULL Administrator access. Verify if support engagement is still active. If complete, disable account immediately. If ongoing, implement time-limited access with quarterly review and MFA enforcement."
+Vikram Kumar,soma.vikram.kumar@oracle.com,Administrator,External - Oracle,Active,Full Administrator Access,Not Listed,Active,CRITICAL,"IMMEDIATE REVIEW REQUIRED - Oracle consultant with FULL Administrator access. Verify if implementation/support engagement is still active. If complete, disable immediately. If ongoing, downgrade to limited support role with MFA enforcement and quarterly access review."
+Chimee Eze,chimee@crmexpertsonline.com,"Quality Administrator, Quality Manager, Administrator",External - CRM Consultant,Active,Full Administrator Access,Not Listed,Active,CRITICAL,"IMMEDIATE REVIEW REQUIRED - External CRM consultant with FULL Administrator access. CRM Experts Online appears to be third-party consultant firm. Verify if CRM implementation project is complete. If complete, disable immediately. If ongoing, downgrade to Quality Manager role ONLY (remove Administrator). Implement project completion date and automatic access expiration."
+Jeff Restivo,jrestivo@walpoleadvisors.com,HBNO - Accountant,External - Walpole Advisors,Active,Accountant Role Only,Not Listed,Active,LOW,"ACCEPTABLE - External accountant from Walpole Advisors with Accountant role only (no Administrator access). This is standard for external accounting firms. RECOMMEND: (1) Verify engagement is still active, (2) Implement annual access review, (3) Enforce MFA, (4) Consider time-limited access with quarterly renewal."
+Rian,rian@netstock.co,"HBNO - Administrator, NETSTOCK Integration Role, NETSTOCK Consultant Role",External - Netstock Vendor,Active,Administrator + Integration Access,Not Listed,Active,HIGH,"HIGH PRIORITY REVIEW - Netstock integration vendor should NOT have Administrator access. Integration vendors should use API-only access via Integration Role. RECOMMEND: (1) REMOVE Administrator role immediately, (2) Keep NETSTOCK Integration Role and NETSTOCK Consultant Role ONLY, (3) Create dedicated integration user account with API-only access, (4) Implement IP whitelisting for integration endpoints, (5) Review integration security and audit logs."
+
+SUMMARY OF FINDINGS:
+Total External Consultants Analyzed: 8
+CRITICAL Risk: 6 (Oracle/NetSuite consultants + CRM consultant with Administrator access)
+HIGH Risk: 1 (Integration vendor with unnecessary Administrator access)
+LOW Risk: 1 (External accountant with appropriate role)
+
+IMMEDIATE ACTIONS REQUIRED:
+1. Disable all Oracle/NetSuite consultant Administrator accounts if engagements are complete
+2. Remove Administrator access from Chimee Eze (CRM consultant) - keep Quality roles only
+3. Remove Administrator access from Rian (Netstock) - keep Integration roles only
+4. Consolidate duplicate Ryan Fielding accounts
+5. Implement MFA for ALL external users
+6. Establish quarterly access review process for external consultants
+7. Create formal vendor access management policy with automatic expiration dates
+
+ORACLE/NETSUITE CONSULTANT NOTES:
+- 5 accounts from Oracle/NetSuite domains with Administrator access
+- Common for implementation/support but should be time-limited
+- May indicate ongoing support contract
+- VERIFY: Is there an active Oracle support contract? If yes, access may be legitimate but should be reviewed quarterly
+- RECOMMENDATION: If support is ongoing, downgrade to NetSuite Support Center role instead of full Administrator
+
+INTEGRATION VENDOR BEST PRACTICES VIOLATED:
+- Netstock integration vendor (rian@netstock.co) has Administrator access
+- Integration vendors should NEVER have Administrator access
+- Should use dedicated integration user with:
+  * NETSTOCK Integration Role only
+  * API-only access (RESTlet/web services)
+  * IP whitelisting
+  * No UI login capability
+  * Separate credentials from human users
+
+EXTERNAL ACCOUNTANT ASSESSMENT:
+- Jeff Restivo (Walpole Advisors) has appropriate Accountant role
+- No Administrator access (GOOD)
+- Standard configuration for external accounting firms
+- Should implement annual review and MFA
+
+RISK SCORING METHODOLOGY:
+CRITICAL = External user with Administrator access (implementation may be complete)
+HIGH = External user with excessive privileges for their function
+MEDIUM = External user with appropriate role but missing security controls
+LOW = External user with appropriate role and acceptable security posture

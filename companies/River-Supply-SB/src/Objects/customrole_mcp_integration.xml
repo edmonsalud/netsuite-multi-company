@@ -1,0 +1,287 @@
+<role scriptid="customrole_mcp_integration">
+  <name>MCP Integration - API Access</name>
+  <centertype>BASIC</centertype>
+  <employeerestriction>NONE</employeerestriction>
+  <issalesrole>F</issalesrole>
+  <issupportrole>F</issupportrole>
+  <restricttimeandexpenses>F</restricttimeandexpenses>
+  <permissions>
+
+    <!-- ============================================================ -->
+    <!-- SETUP/ADMINISTRATION PERMISSIONS (VALID ONLY) -->
+    <!-- ============================================================ -->
+    <permission>
+      <permkey>ADMI_WEBSERVICES</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>ADMI_CUSTOMSCRIPT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>ADMI_WORKFLOW</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>ADMI_SAVEDASHBOARD</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>ADMI_ACCOUNTING</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>ADMI_ACCOUNTINGBOOK</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+
+    <!-- ============================================================ -->
+    <!-- ANALYTICS/REPORTING PERMISSIONS -->
+    <!-- ============================================================ -->
+    <permission>
+      <permkey>REPO_ANALYTICS</permkey>
+      <permlevel>EDIT</permlevel>
+    </permission>
+    <permission>
+      <permkey>REPO_AR</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>REPO_SALES</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>REPO_INVENTORY</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+
+    <!-- ============================================================ -->
+    <!-- LISTS - ALL VALID PERMISSIONS -->
+    <!-- ============================================================ -->
+    <permission>
+      <permkey>LIST_ACCOUNT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_VENDOR</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_ITEM</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_EMPLOYEE</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_CONTACT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_SUBSIDIARY</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_DEPARTMENT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_CLASS</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_LOCATION</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_BIN</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_CURRENCY</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_PARTNER</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_EVENT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_TASK</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_CAMPAIGN</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_CASE</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_ISSUE</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+
+    <!-- ============================================================ -->
+    <!-- TRANSACTION PERMISSIONS (ALL TYPES) -->
+    <!-- ============================================================ -->
+    <permission>
+      <permkey>TRAN_FIND</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+
+    <!-- Sales Transactions -->
+    <permission>
+      <permkey>TRAN_ESTIMATE</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_SALESORD</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_CUSTINVC</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_CASHSALE</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_CUSTCRED</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_CUSTPYMT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_CUSTDEP</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_CUSTRFND</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_RTNAUTH</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_OPPRTNTY</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_CASHRFND</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+
+    <!-- Purchase Transactions -->
+    <permission>
+      <permkey>TRAN_PURCHORD</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_VENDBILL</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_VENDCRED</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_VENDPYMT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_VENDAUTH</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+
+    <!-- Inventory Transactions -->
+    <permission>
+      <permkey>TRAN_ITEMRCPT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_ITEMSHIP</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_INVCOUNT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_INVADJST</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_INVWKSHT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_INVTRNFR</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_TRNFRORD</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_WORKORD</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_BUILD</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_BINTRNFR</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_BINWKSHT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+
+    <!-- Financial Transactions -->
+    <permission>
+      <permkey>TRAN_JOURNAL</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_DEPOSIT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_CHECK</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+
+    <!-- Payroll/HR Transactions -->
+    <permission>
+      <permkey>TRAN_PAYCHECK</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_EXPREPT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_TAXPYMT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+
+    <!-- Other Transactions -->
+    <permission>
+      <permkey>TRAN_STATEMENT</permkey>
+      <permlevel>FULL</permlevel>
+    </permission>
+
+  </permissions>
+</role>

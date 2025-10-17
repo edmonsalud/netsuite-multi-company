@@ -1,0 +1,144 @@
+/**
+ * NetSuite Record API Test Script Template
+ *
+ * SETUP INSTRUCTIONS:
+ * 1. Copy this file to: companies/[COMPANY-NAME]/test-netsuite-records.js
+ * 2. Replace all YOUR_* placeholders with your actual NetSuite credentials
+ * 3. Get credentials from NetSuite:
+ *    - Setup → Integrations → Manage Integrations → New
+ *    - Setup → Users/Roles → Access Tokens → New
+ *    - Setup → Company → Company Information (for Account ID)
+ *
+ * SECURITY WARNING: Never commit this file to Git after adding real credentials!
+ */
+
+const crypto = require('crypto');
+const https = require('https');
+
+// NetSuite Configuration - REPLACE ALL VALUES BELOW
+const config = {
+  accountId: 'YOUR_ACCOUNT_ID',           // e.g., '9910981-sb1' or '693183'
+  consumerKey: 'YOUR_CONSUMER_KEY',       // From Integration Record
+  consumerSecret: 'YOUR_CONSUMER_SECRET', // From Integration Record
+  tokenId: 'YOUR_TOKEN_ID',               // From Access Token
+  tokenSecret: 'YOUR_TOKEN_SECRET',       // From Access Token
+  realm: 'YOUR_REALM'                     // Usually same as accountId or accountId.toUpperCase()
+};
+
+/**
+ * Generate OAuth 1.0a signature for NetSuite TBA
+ */
+function generateOAuthHeader(url, method, realm, consumerKey, consumerSecret, tokenId, tokenSecret) {
+  const timestamp = Math.floor(Date.now() / 1000).toString();
+  const nonce = crypto.randomBytes(16).toString('hex');
+
+  const oauthParams = {
+    oauth_consumer_key: consumerKey,
+    oauth_nonce: nonce,
+    oauth_signature_method: 'HMAC-SHA256',
+    oauth_timestamp: timestamp,
+    oauth_token: tokenId,
+    oauth_version: '1.0'
+  };
+
+  const paramString = Object.keys(oauthParams)
+    .sort()
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(oauthParams[key])}`)
+    .join('&');
+
+  const signatureBaseString = `${method.toUpperCase()}&${encodeURIComponent(url)}&${encodeURIComponent(paramString)}`;
+
+  const signingKey = `${encodeURIComponent(consumerSecret)}&${encodeURIComponent(tokenSecret)}`;
+  const signature = crypto
+    .createHmac('sha256', signingKey)
+    .update(signatureBaseString)
+    .digest('base64');
+
+  const authHeader = `OAuth realm="${realm}", ` +
+    Object.keys(oauthParams)
+      .map(key => `${key}="${encodeURIComponent(oauthParams[key])}"`)
+      .join(', ') +
+    `, oauth_signature="${encodeURIComponent(signature)}"`;
+
+  return authHeader;
+}
+
+/**
+ * Fetch records via REST API
+ */
+function fetchRecords(recordType, limit = 1000) {
+  return new Promise((resolve, reject) => {
+    const url = `https://${config.accountId}.suitetalk.api.netsuite.com/services/rest/record/v1/${recordType}?limit=${limit}`;
+    const method = 'GET';
+
+    const authHeader = generateOAuthHeader(
+      url,
+      method,
+      config.realm,
+      config.consumerKey,
+      config.consumerSecret,
+      config.tokenId,
+      config.tokenSecret
+    );
+
+    const options = {
+      hostname: `${config.accountId}.suitetalk.api.netsuite.com`,
+      path: `/services/rest/record/v1/${recordType}?limit=${limit}`,
+      method: method,
+      headers: {
+        'Authorization': authHeader,
+        'Content-Type': 'application/json',
+        'Prefer': 'transient'
+      }
+    };
+
+    console.log('Making request to:', url);
+
+    const req = https.request(options, (res) => {
+      let data = '';
+
+      console.log('Response status:', res.statusCode);
+
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      res.on('end', () => {
+        try {
+          const parsed = JSON.parse(data);
+          resolve({ statusCode: res.statusCode, data: parsed });
+        } catch (e) {
+          resolve({ statusCode: res.statusCode, data: data });
+        }
+      });
+    });
+
+    req.on('error', (error) => {
+      reject(error);
+    });
+
+    req.end();
+  });
+}
+
+// Test the connection
+console.log('Testing NetSuite Record API Connection...');
+console.log('Account ID:', config.accountId);
+console.log('Fetching customer records...');
+console.log('');
+
+fetchRecords('customer', 10)
+  .then(result => {
+    console.log('\n✅ SUCCESS!');
+    console.log('Status Code:', result.statusCode);
+    console.log('\nResponse Data:');
+    console.log(JSON.stringify(result.data, null, 2));
+
+    if (result.data.items) {
+      console.log('\n📊 Retrieved', result.data.items.length, 'customers');
+    }
+  })
+  .catch(error => {
+    console.error('\n❌ ERROR:', error.message);
+    console.error(error);
+  });

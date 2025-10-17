@@ -1,0 +1,121 @@
+@echo off
+REM Import all roles from HBNO account
+
+echo Importing all roles...
+echo.
+
+call npx suitecloud object:import --type role --scriptid customrole1000 --destinationfolder /Objects 2>nul || echo Failed: customrole1000 (locked)
+npx suitecloud object:import --type role --scriptid customrole1001 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1001_3 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1002 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1240 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1347 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1349 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1351 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1353 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1354 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1455 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1456 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1762 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1763 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1768 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1780 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1781 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1782 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1782_2 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1786 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1789 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1790 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1791 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1792 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1793 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1794 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1795 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1796 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1797 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1800 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole1802 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole2003 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole2003_2 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole2004 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole2005 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole2006 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole2007 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole2109 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole2110 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole2112 --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mf_em_production --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mfg_em_acct --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mfg_em_cfo --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mfg_em_contract_mfg --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mfg_em_controller --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mfg_em_customer_service --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mfg_em_marketing_mgr --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mfg_em_purchasing_mgr --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mfg_em_sales --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mfg_em_sales_mgr --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mfg_em_senior_exec --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mfg_em_suply_chain_mgr --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_atlas_mfg_em_whse_mgr --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_ccp_gateway_admin --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_dt_file_path_admin_role --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_ep_approver --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_ep_configurator --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_ep_processor --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_esc_sales_admin --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_esc_sales_manager --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_esc_sales_publisher --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_esc_sales_rep --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mf_em_production --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mfg_em_acct --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mfg_em_cfo --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mfg_em_contract_mfg --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mfg_em_controller --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mfg_em_customer_service --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mfg_em_marketing_mgr --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mfg_em_purchasing_mgr --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mfg_em_sales --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mfg_em_sales_mgr --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mfg_em_senior_exec --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mfg_em_suply_chain_mgr --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_mfg_em_whse_mgr --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_senior_developer --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_wms_material_handler --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_hbno_wms_warehouse_manager_na --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_jpmc_minimal_role --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_lot_sn_role --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_mfgmob_productionmanager --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_mfgmob_productionoperator --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_mobile_administrator --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_ncfar --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_netstock_consultant --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_netstock_integration --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_netsuite_dev_team --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_ns_ps_implementation_team --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_packingadmin --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_packship_packer --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_qm_administrator --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_qm_engineer --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_qm_manager --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_shipcentralmanager --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_shipcentraloperator --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_shipcentralpackingoperator --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_shipcentralshippingoperator --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_srpamazonuser --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_translation_script_admin --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_webserviceadmin --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_wmsse_in_mngr --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_wmsse_in_op --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_wmsse_mobile --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_wmsse_out_mngr --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_wmsse_out_op --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_wmsse_warehouse --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_wmsse_warehousemanager --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_wmsse_wh_administrator --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_wmsse_wh_operator --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customrole_wmsse_wms_inv_manager --destinationfolder /Objects
+npx suitecloud object:import --type role --scriptid customroletestinventory --destinationfolder /Objects
+
+echo.
+echo All roles imported successfully!
+pause

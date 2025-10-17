@@ -1,0 +1,24 @@
+🔄 Bulk Customer Update - IMPROVED VERSION
+================================================================================
+
+Step 1: Reading CSV file...
+
+✅ Loaded 476 customer records
+
+Step 2: Fetching employees...
+
+✅ 16 employees mapped
+
+Step 3: Processing updates...
+
+[10/476] Success: 7 | Not Found: 2 | Errors: 0[20/476] Success: 17 | Not Found: 2 | Errors: 0[30/476] Success: 26 | Not Found: 3 | Errors: 0[40/476] Success: 36 | Not Found: 3 | Errors: 0[50/476] Success: 46 | Not Found: 3 | Errors: 0[60/476] Success: 56 | Not Found: 3 | Errors: 0[70/476] Success: 66 | Not Found: 3 | Errors: 0[80/476] Success: 76 | Not Found: 3 | Errors: 0[90/476] Success: 86 | Not Found: 3 | Errors: 0[100/476] Success: 96 | Not Found: 3 | Errors: 0[110/476] Success: 106 | Not Found: 3 | Errors: 0[120/476] Success: 116 | Not Found: 3 | Errors: 0[130/476] Success: 125 | Not Found: 4 | Errors: 0[140/476] Success: 135 | Not Found: 4 | Errors: 0[150/476] Success: 144 | Not Found: 5 | Errors: 0[160/476] Success: 154 | Not Found: 5 | Errors: 0[170/476] Success: 163 | Not Found: 5 | Errors: 1[180/476] Success: 173 | Not Found: 5 | Errors: 1[190/476] Success: 180 | Not Found: 5 | Errors: 4[200/476] Success: 180 | Not Found: 5 | Errors: 14[210/476] Success: 180 | Not Found: 5 | Errors: 24[220/476] Success: 180 | Not Found: 5 | Errors: 34[230/476] Success: 188 | Not Found: 5 | Errors: 36[240/476] Success: 196 | Not Found: 7 | Errors: 36[250/476] Success: 206 | Not Found: 7 | Errors: 36[260/476] Success: 215 | Not Found: 8 | Errors: 36[270/476] Success: 225 | Not Found: 8 | Errors: 36[280/476] Success: 234 | Not Found: 9 | Errors: 36[290/476] Success: 243 | Not Found: 10 | Errors: 36[300/476] Success: 252 | Not Found: 11 | Errors: 36[310/476] Success: 261 | Not Found: 12 | Errors: 36[320/476] Success: 271 | Not Found: 12 | Errors: 36[330/476] Success: 280 | Not Found: 13 | Errors: 36[340/476] Success: 289 | Not Found: 14 | Errors: 36[350/476] Success: 299 | Not Found: 14 | Errors: 36[360/476] Success: 306 | Not Found: 17 | Errors: 36[370/476] Success: 315 | Not Found: 18 | Errors: 36[380/476] Success: 323 | Not Found: 20 | Errors: 36[390/476] Success: 332 | Not Found: 21 | Errors: 36[400/476] Success: 340 | Not Found: 23 | Errors: 36[410/476] Success: 350 | Not Found: 23 | Errors: 36[420/476] Success: 360 | Not Found: 23 | Errors: 36[430/476] Success: 370 | Not Found: 23 | Errors: 36[440/476] Success: 372 | Not Found: 23 | Errors: 44[450/476] Success: 372 | Not Found: 23 | Errors: 54[460/476] Success: 372 | Not Found: 24 | Errors: 63[470/476] Success: 372 | Not Found: 25 | Errors: 72
+
+================================================================================
+
+📊 FINAL SUMMARY:
+   Total records: 476
+   ✅ Successfully updated: 372
+   ❌ Not found: 25
+   ❌ Errors: 79
+
+================================================================================

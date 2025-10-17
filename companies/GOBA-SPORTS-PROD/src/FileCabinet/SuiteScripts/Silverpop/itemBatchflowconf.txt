@@ -1,0 +1,53 @@
+{
+	"integration" : "Silverpop",
+	"useCase" : "Purchased Item Sync",
+	"celigo_classname" : "Celigo.integrator.batch.Export",
+	"savedSearches" : [{
+			"celigo_classname" : "Celigo.integrator.model.SavedSearchConfig",
+			"recordType" : "transaction",
+			"searchId" : "customsearch1191",
+			"ignoreFilter" : false
+			
+		}
+	],
+	"pageSize" : 100,
+	"recordCountToBeProcessedBeforeYield" : 1000,
+	"requestMapper" : {
+		"celigo_classname" : "Celigo.integrator.mapper.xml.XmlMapper"
+	},
+	"requestMappingRef" : {
+		"celigo_classname" : "Celigo.integrator.mapping.model.DocumentMapping",
+		"id" : "springfree-purchase-item-mapping"
+	},
+	"connector" : {
+		"name" : "ParentConnector1",
+		"celigo_classname" : "Celigo.integrator.connectors.http.HttpConnectorImpl",
+		"credentialRef" : {
+			"celigo_classname" : "Celigo.io.CredentialsManager",
+			"id" : null
+		},
+		"requestUrl" : "{{SuiteScript \"$$.getContext().getSetting('SCRIPT', 'custscript_cps_silverpop_endpoint_url')\"}}",
+		"requestHeader" : null,
+		"requestBody" : "<Envelope><Body><Login><USERNAME>{{SuiteScript \"$$.getContext().getSetting('SCRIPT', 'custscript_cps_silverpop_api_username')\"}}</USERNAME><PASSWORD>{{SuiteScript \"$$.getContext().getSetting('SCRIPT', 'custscript_cps_silverpop_api_password')\"}}</PASSWORD></Login></Body></Envelope>",
+		"responseMapper" : {
+			"celigo_classname" : "Celigo.integrator.mapper.xml.XmlMapper"
+		},
+		"responseMappingRef" : {
+			"celigo_classname" : "Celigo.integrator.mapping.model.DocumentMapping",
+			"id" : "silverpop-entity-parent-connector-mapper"
+		},
+		"method" : "post",
+		"nextConnector" : {
+			"name" : "ChildConnector1",
+			"celigo_classname" : "Celigo.integrator.connectors.http.HttpConnectorImpl",
+			"credentialRef" : {
+				"celigo_classname" : "Celigo.io.CredentialsManager",
+				"id" : null
+			},
+			"requestUrl" : "{{SuiteScript \"$$.getContext().getSetting('SCRIPT', 'custscript_cps_silverpop_endpoint_url')\"}};jsessionid={{responseContext.sessionId}}",
+			"requestHeader" : null,
+			"requestBody" : "{{{message}}}",
+			"method" : "post"
+		}
+	}
+}

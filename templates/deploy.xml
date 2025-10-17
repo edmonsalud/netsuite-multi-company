@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    NetSuite SDF Deployment Configuration - Standard Template
+
+    This is the MASTER deploy.xml template for all company projects.
+
+    USAGE:
+    - Copy this file to companies/[COMPANY-NAME]/src/deploy.xml
+    - Uncomment/modify sections based on what your project contains
+    - This file defines WHAT gets deployed to NetSuite
+
+    AUTHENTICATION:
+    - This file does NOT affect authentication
+    - It only controls which artifacts are deployed
+
+    DEPLOYMENT SCOPE:
+    - AccountConfiguration: Account-level settings, features, preferences
+    - FileCabinet: Scripts, templates, files (SuiteScripts folder)
+    - Objects: Custom records, workflows, saved searches, scripts, etc.
+    - Translations: Multi-language string translations
+-->
+<deploy>
+    <!--
+        ACCOUNT CONFIGURATION
+        Includes account-level settings and feature configurations
+    -->
+    <configuration>
+        <path>~/AccountConfiguration/*</path>
+    </configuration>
+
+    <!--
+        FILE CABINET
+        Includes all scripts, templates, and files
+        Common path: ~/FileCabinet/SuiteScripts/*
+    -->
+    <files>
+        <path>~/FileCabinet/*</path>
+    </files>
+
+    <!--
+        OBJECTS
+        Includes custom records, workflows, saved searches, script deployments, etc.
+    -->
+    <objects>
+        <path>~/Objects/*</path>
+    </objects>
+
+    <!--
+        TRANSLATIONS
+        Includes multi-language translation strings
+        (Uncomment if your project uses translations)
+    -->
+    <translationimports>
+        <path>~/Translations/*</path>
+    </translationimports>
+</deploy>

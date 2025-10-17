@@ -1,0 +1,18 @@
+Internal ID,Name,Email,Global Permission,Global Permission Level
+30167,Accounts  Receivable,ar@hbno.com,Customer Payment,Full
+30167,Accounts  Receivable,ar@hbno.com,Customer Deposit,Full
+215445,Eduardo NS,netsuite1@hbno.com,Manage Users,Full
+215445,Eduardo NS,netsuite1@hbno.com,Bulk Manage Roles,Full
+117,Hussam B'Dour,hussam@hbno.com,Bills,Edit
+122,Kenneth R Carroll,kencarroll@hbno.com,Mobile Device Access,None
+85890,Mikka Bautista,Mikka@hbno.com,Employees,Full
+85890,Mikka Bautista,Mikka@hbno.com,Manage Users,Full
+85890,Mikka Bautista,Mikka@hbno.com,Employee Record,Full
+69728,Mubashir M Amin,mubashir@srp.ai,Support Case Issue,None
+3,Nora Gazga,nora@hbno.com,Project Templates,Full
+30166,Priya AP,priya@hbno.com,Tasks,Full
+9,Rajeswaran Ayyadurai,rajesh@hbno.com,Custom Center Link,Full
+9,Rajeswaran Ayyadurai,rajesh@hbno.com,Adjust Inventory,Full
+9,Rajeswaran Ayyadurai,rajesh@hbno.com,Custom Center Links,Full
+451,Sai  Rajasekaran,sai@hbno.com,Invoice,Full
+44108,Santhosh K Bejjenki,santhosh@hbno.com,Bills,Full

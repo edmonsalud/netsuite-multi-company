@@ -1,0 +1,47 @@
+<workflow scriptid="customworkflow_salesorder_salesrep_auto">
+  <name>Auto-Set Sales Rep - Sales Order</name>
+  <description>Automatically populates salesrep field from customer master record on Sales Orders</description>
+  <initoncreate>T</initoncreate>
+  <initonvieworupdate>T</initonvieworupdate>
+  <isinactive>F</isinactive>
+  <islogenabled>T</islogenabled>
+  <keephistory>ALWAYS</keephistory>
+  <recordtypes>SALESORDER</recordtypes>
+  <runasadmin>F</runasadmin>
+  <workflowcustomfields>
+    <workflowcustomfield scriptid="custworkflow_salesrep_populated_so">
+      <applyformatting>T</applyformatting>
+      <defaultchecked>F</defaultchecked>
+      <description>Indicates if salesrep was populated by workflow</description>
+      <displaytype>HIDDEN</displaytype>
+      <fieldtype>CHECKBOX</fieldtype>
+      <label>Salesrep Populated by Workflow</label>
+    </workflowcustomfield>
+  </workflowcustomfields>
+  <workflowstates>
+    <workflowstate scriptid="workflowstate_populate_salesrep_so">
+      <name>Populate Sales Rep</name>
+      <description>Set salesrep field value from customer master record</description>
+      <donotexitworkflow>F</donotexitworkflow>
+      <positionx>100</positionx>
+      <positiony>100</positiony>
+      <workflowactions triggertype="BEFORELOAD">
+        <setfieldvalueaction scriptid="workflowaction_set_salesrep_so">
+          <field>STDBODYSALESREP</field>
+          <valueformula>{entity.salesrep}</valueformula>
+          <valuetype>FORMULA</valuetype>
+        </setfieldvalueaction>
+        <setdisplaytypeaction scriptid="workflowaction_disable_salesrep_so">
+          <conditionsavedsearch></conditionsavedsearch>
+          <displaytype>DISABLED</displaytype>
+          <field>STDBODYSALESREP</field>
+          <initcondition>
+            <formula>{role}&lt;&gt;3</formula>
+            <type>FORMULA</type>
+          </initcondition>
+          <isinactive>F</isinactive>
+        </setdisplaytypeaction>
+      </workflowactions>
+    </workflowstate>
+  </workflowstates>
+</workflow>

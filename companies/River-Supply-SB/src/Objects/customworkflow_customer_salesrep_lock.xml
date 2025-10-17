@@ -1,0 +1,32 @@
+<workflow scriptid="customworkflow_customer_salesrep_lock">
+  <name>Lock Sales Rep - Customer</name>
+  <description>Disables salesrep field on Customer records for non-Administrator roles</description>
+  <initoncreate>T</initoncreate>
+  <initonvieworupdate>T</initonvieworupdate>
+  <isinactive>F</isinactive>
+  <islogenabled>T</islogenabled>
+  <keephistory>ALWAYS</keephistory>
+  <recordtypes>CUSTOMER</recordtypes>
+  <runasadmin>F</runasadmin>
+  <workflowstates>
+    <workflowstate scriptid="workflowstate_lock_salesrep">
+      <name>Lock Sales Rep Field</name>
+      <description>Disable salesrep field for non-administrators</description>
+      <donotexitworkflow>F</donotexitworkflow>
+      <positionx>100</positionx>
+      <positiony>100</positiony>
+      <workflowactions triggertype="BEFORELOAD">
+        <setdisplaytypeaction scriptid="workflowaction_disable_salesrep">
+          <conditionsavedsearch></conditionsavedsearch>
+          <displaytype>DISABLED</displaytype>
+          <field>STDENTITYSALESREP</field>
+          <initcondition>
+            <formula>{role}&lt;&gt;3</formula>
+            <type>FORMULA</type>
+          </initcondition>
+          <isinactive>F</isinactive>
+        </setdisplaytypeaction>
+      </workflowactions>
+    </workflowstate>
+  </workflowstates>
+</workflow>

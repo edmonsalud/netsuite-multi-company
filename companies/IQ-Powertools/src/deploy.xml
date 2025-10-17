@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy>
+  <objects>
+    <path>~/Objects/customrecord_iq_vendor_cache.xml</path>
+  </objects>
+</deploy>

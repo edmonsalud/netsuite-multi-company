@@ -1,0 +1,16 @@
+<usereventscript scriptid="customscript_po_payment_schedule">
+    <name>PO Payment Schedule Generator</name>
+    <notifyowner>F</notifyowner>
+    <description>Automatically generates payment schedules for Purchase Orders based on custom payment terms</description>
+    <scriptfile>[/SuiteScripts/PO_Payment_Schedule/po_payment_schedule_ue.js]</scriptfile>
+    <scriptdeployments>
+        <scriptdeployment scriptid="customdeploy_po_payment_schedule">
+            <allroles>T</allroles>
+            <status>TESTING</status>
+            <recordtype>PURCHASEORDER</recordtype>
+            <loglevel>AUDIT</loglevel>
+            <runasrole>ADMINISTRATOR</runasrole>
+            <isdeployed>T</isdeployed>
+        </scriptdeployment>
+    </scriptdeployments>
+</usereventscript>

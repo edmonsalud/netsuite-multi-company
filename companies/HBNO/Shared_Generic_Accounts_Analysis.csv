@@ -1,0 +1,89 @@
+Account Name,Email,Account Type,Roles Assigned,Global Permissions,Risk Level,SOX Violation,Audit Trail Impact,Business Impact,Recommendation,Remediation Steps,Priority,Estimated Effort
+AP Accounts Payable,ap@hbno.com,Shared Financial,"buildHBNO - Warehouse Manager, HBNO - Customer Service Restricted all subs, HBNO - Accountant, J.P. Morgan Minimal Role",None visible,CRITICAL,YES - Multiple users sharing financial account,COMPLETE LOSS - Cannot identify who created/approved payments,HIGH - Core AP function,"IMMEDIATE DEACTIVATION - Replace with individual named accounts","1. Create individual accounts for each AP team member with proper names (e.g., priya@hbno.com already exists)
+2. Assign role-based permissions to each individual
+3. Document who had access to ap@hbno.com (interview AP manager)
+4. Review all transactions processed through ap@hbno.com in last 90 days
+5. Implement maker-checker approval workflow
+6. Deactivate ap@hbno.com
+7. Update all system integrations/email filters to route to AP team distribution list",P0 - IMMEDIATE,2-3 days
+AR Accounts Receivable,ar@hbno.com,Shared Financial,"HBNO - Customer Service Specialist, HBNO - Customer Service Restricted all subs, HBNO - Accountant","Customer Payment - Full, Customer Deposit - Full",CRITICAL,YES - Multiple users sharing financial account with payment authority,COMPLETE LOSS - Cannot identify who processed customer payments/deposits,HIGH - Core AR function with payment processing,"IMMEDIATE DEACTIVATION - Replace with individual named accounts","1. Create individual accounts for each AR team member
+2. Assign Customer Payment/Deposit permissions to specific individuals based on job function
+3. Document current users of ar@hbno.com (interview AR manager)
+4. Review all customer payments/deposits processed in last 90 days
+5. Implement segregation: one person records payment, another reconciles
+6. Deactivate ar@hbno.com
+7. Create shared email distribution (ar-team@hbno.com) for customer communications only",P0 - IMMEDIATE,2-3 days
+AP Accountant,accountant@hbno.com,Shared Financial,HBNO - Accountant,None visible,CRITICAL,YES - Generic shared financial account,COMPLETE LOSS - Cannot identify who performed accounting transactions,HIGH - Financial reporting and compliance,"IMMEDIATE DEACTIVATION - Replace with individual named accounts","1. Identify all users currently using accountant@hbno.com
+2. Create individual accounts: accountant1@hbno.com (FirstName LastName), accountant2@hbno.com, etc.
+3. Assign HBNO - Accountant role to each individual based on responsibilities
+4. Review all journal entries, reconciliations, and adjustments made via accountant@hbno.com
+5. Implement dual authorization for journal entries over threshold ($10,000)
+6. Deactivate accountant@hbno.com
+7. Update accounting procedures to require named user accountability",P0 - IMMEDIATE,2-3 days
+Purchasing Department,purchasing@hbno.com,Shared Operational,HBNO - Purchasing Manager,None visible,HIGH,YES - Shared departmental account,SIGNIFICANT LOSS - Cannot identify who created/approved purchase orders,MEDIUM - Procurement function,"REPLACE with individual named accounts + workflow controls","1. Identify all purchasing department users (Lean Villasis at purchasing4@hbno.com already exists)
+2. Create individual accounts for each buyer: buyer1@hbno.com (FirstName LastName), buyer2@hbno.com, etc.
+3. Assign HBNO - Purchasing Manager role based on approval limits
+4. Implement purchase order approval workflow based on dollar thresholds:
+   - Under $5,000: Buyer approval
+   - $5,000-$25,000: Purchasing Manager approval
+   - Over $25,000: Director approval
+5. Review all POs created via purchasing@hbno.com in last 90 days
+6. Deactivate purchasing@hbno.com
+7. Create distribution list (purchasing-team@hbno.com) for vendor communications",P1 - HIGH,3-4 days
+Regulatory a Compliance,regulatory@hbno.com,Shared Operational,WMS Warehouse Manager,None visible,HIGH,POSSIBLE - Shared compliance account,SIGNIFICANT LOSS - Cannot identify who performed regulatory actions,MEDIUM - Regulatory filings and compliance,"REPLACE with individual named accounts + audit logging","1. Identify current users of regulatory@hbno.com (likely QA/compliance team)
+2. Create individual accounts for compliance officers
+3. Question: Why does compliance account have WMS Warehouse Manager role? Likely incorrect role assignment
+4. Create dedicated compliance role with appropriate permissions (document review, reporting, but not warehouse operations)
+5. Review all compliance-related activities in last 180 days
+6. Implement activity logging for all regulatory submissions
+7. Deactivate regulatory@hbno.com
+8. Create distribution (compliance-team@hbno.com) for regulatory communications",P1 - HIGH,3-4 days
+Eduardo NS,netsuite1@hbno.com,Generic Admin Account,"NetSuite Support Center (Basic), NetSuite Support Center, HBNO - Administrator, Amazon User","Manage Users - Full, Bulk Manage Roles - Full",CRITICAL,YES - Generic admin account with user management authority,COMPLETE LOSS - Cannot identify who created/modified users or roles,CRITICAL - System administration and user management,"INVESTIGATE IMMEDIATELY - Likely contractor/consultant account that should be individual","1. URGENT: Identify who ""Eduardo NS"" is - Real person or generic account?
+2. If generic: Document all user/role changes made via netsuite1@hbno.com
+3. Review audit logs for last 180 days for user creation, role assignments, permission changes
+4. If real person: Update email to eduardo.[lastname]@hbno.com with proper naming
+5. If generic/shared: Create individual admin accounts for each authorized administrator
+6. Remove Manage Users and Bulk Manage Roles from generic accounts
+7. Implement dual authorization for user/role changes
+8. If consultant account: Should be consultant's work email (e.g., eduardo@consultingfirm.com), not generic @hbno.com
+9. Enable MFA on all administrator accounts
+10. Review Amazon User role assignment - should not be on admin account",P0 - IMMEDIATE,1-2 days investigation + 2-3 days remediation
+Diego Gasaniga,netsuite2@hbno.com,Generic Admin Account,"WMS Warehouse Manager Not Approval, HBNO - Purchasing Sourcing Role, HBNO - Material Handler WMS, Administrator, WMS Warehouse Manager",None visible,CRITICAL,YES - Generic admin account with excessive permissions,COMPLETE LOSS - Cannot identify who performed warehouse/purchasing/admin actions,HIGH - Multiple critical business functions,"INVESTIGATE IMMEDIATELY - Likely contractor/consultant account that should be individual","1. URGENT: Identify who ""Diego Gasaniga"" is - Real person or generic account?
+2. If generic: This is a SOX violation for shared Administrator account
+3. Review audit logs for all activities in last 180 days
+4. If real person: Update email to diego.gasaniga@hbno.com (proper format)
+5. If generic/shared: Create individual accounts for warehouse, purchasing, and admin functions
+6. CONCERN: One account has Administrator + WMS Warehouse Manager + Purchasing - Segregation of Duties violation
+7. Separate accounts needed:
+   - Admin account: admin.diego@hbno.com (if real person)
+   - Warehouse account: Individual warehouse manager
+   - Purchasing account: Individual buyer
+8. If consultant: Use consultant's work email, not @hbno.com
+9. Enable MFA on all administrator accounts
+10. Review all transactions for potential SOD violations",P0 - IMMEDIATE,1-2 days investigation + 3-4 days remediation
+ATER PIPE17,computers@hbno.com,Integration Account,Pipe17 ATER,None visible,MEDIUM,NO - Integration account (acceptable if API-only),LOW - Limited to integration scope,LOW - Third-party e-commerce integration,"ACCEPTABLE - Verify API-only access + implement monitoring","1. VERIFY: Confirm this account is API-only (Web Services access only, no UI login)
+2. Check last login date - should show ""Never"" for UI login
+3. Review permissions - should have ONLY Pipe17 integration permissions
+4. Implement IP whitelisting - only allow Pipe17's documented IP addresses
+5. Enable integration monitoring/alerting for unusual activity:
+   - Failed authentication attempts
+   - Activity outside business hours
+   - Unexpected record types accessed
+6. Review integration logs monthly
+7. Ensure password is complex (25+ characters) and stored in password vault
+8. Document integration purpose and owner in NetSuite (add to account notes)
+9. Set account to ""Inactive"" if Pipe17 integration is no longer used
+10. Verify Pipe17 contract includes security/confidentiality terms",P3 - MEDIUM,1-2 hours verification + ongoing monitoring
+Saud Ali,amazon@hbno.com,Integration Account,Amazon User,None visible,MEDIUM,NO - Integration account (acceptable if API-only),LOW - Limited to integration scope,LOW - Amazon marketplace integration,"ACCEPTABLE - Verify API-only access + implement monitoring","1. VERIFY: Confirm this account is API-only (Web Services access only, no UI login)
+2. Check last login date - should show ""Never"" for UI login
+3. Review Amazon User role permissions - should be limited to order import/inventory sync
+4. Question: Is ""Saud Ali"" a real person or generic name? If real person at Amazon, this is acceptable
+5. If this is a real HBNO employee named Saud Ali, this is INCORRECT - create dedicated integration account (amazon.integration@hbno.com)
+6. Implement IP whitelisting - only allow Amazon's documented IP addresses
+7. Enable integration monitoring/alerting:
+   - Failed authentication attempts
+   - Bulk data exports (security concern)
+   - Unusual transaction volumes
+8. Review integration logs monthly
+9. Ensure password is complex (25+ characters) and stored in password vault
+10. Cross-reference with ""Eduardo NS"" (netsuite1@hbno.com) which also has ""Amazon User"" role - potential duplication",P3 - MEDIUM,1-2 hours verification + ongoing monitoring
