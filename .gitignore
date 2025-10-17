@@ -81,6 +81,13 @@ companies/**/verify-*.js
 companies/**/explore-*.js
 companies/**/fix-*.js
 
+# Production SuiteScripts with Hardcoded Credentials (CRITICAL - Never commit!)
+# These files contain working credentials and must stay local
+companies/GOBA-SPORTS-PROD/src/FileCabinet/SuiteScripts/shopify-orders-scheduled.js
+companies/GOBA-SPORTS-PROD/src/FileCabinet/SuiteScripts/shopify-orders-suitelet.js
+companies/IQ-Powertools/src/FileCabinet/SuiteScripts/invoice_email_plug_in.js
+companies/IQ-Powertools/src/FileCabinet/SuiteScripts/invoice_email_plug_in_improved.js
+
 # Company-specific MCP servers
 companies/**/mcp-server/
 
